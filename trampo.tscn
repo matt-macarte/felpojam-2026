@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://di4r6ivm6cuwi"]
+
+[ext_resource type="Texture2D" uid="uid://da8ae024vnjcm" path="res://assets/concepts/cenario-sketch.png" id="1_ufvgv"]
+
+[node name="Trampo" type="Node2D" unique_id=1024828134]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=273425424]
+anchor_mode = 0
+
+[node name="CenarioSketch" type="Sprite2D" parent="." unique_id=297134131]
+position = Vector2(604, 380)
+scale = Vector2(0.38581958, 0.38581958)
+texture = ExtResource("1_ufvgv")
