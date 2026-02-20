@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://di4r6ivm6cuwi"]
 
-[ext_resource type="Texture2D" uid="uid://da8ae024vnjcm" path="res://assets/concepts/cenario-sketch.png" id="1_ufvgv"]
+[ext_resource type="Texture2D" uid="uid://da8ae024vnjcm" path="res://assets/sprites/cenario-sketch.png" id="1_ufvgv"]
 
 [node name="Trampo" type="Node2D" unique_id=1024828134]
 
