@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0q2y2kqty3il"]
+
+[ext_resource type="Script" uid="uid://boqbripf22nb4" path="res://jogo.gd" id="1_7bb4d"]
+
+[node name="Jogo" type="Node" unique_id=1773288651]
+script = ExtResource("1_7bb4d")
+
+[node name="Cenas" type="Node2D" parent="." unique_id=1701139563]
+
+[node name="GUI" type="Control" parent="." unique_id=294843823]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cy3dpmmhj8ut3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1786k"]
+bg_color = Color(0.105882354, 0.039215688, 0.23137255, 1)
+
+[node name="Cena" type="Node2D" unique_id=522674880]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=186972451]
+anchor_mode = 0
+
+[node name="Panel" type="Panel" parent="." unique_id=461365186]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(32.27494, 18.843699)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1786k")

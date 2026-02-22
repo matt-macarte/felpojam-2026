@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://di4r6ivm6cuwi"]
+
+[ext_resource type="Texture2D" uid="uid://brv0djqovwxai" path="res://assets/sprites/background_trabalho.png" id="1_fbqnr"]
+
+[node name="Trampo" type="Node2D" unique_id=1024828134]
+
+[node name="BackgroundTrabalho" type="Sprite2D" parent="." unique_id=2016977600]
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_fbqnr")
+metadata/_edit_lock_ = true

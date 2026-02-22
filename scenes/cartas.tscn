@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bbob7s6kgjoxa"]
+
+[ext_resource type="Texture2D" uid="uid://dqq0bqlkw02ax" path="res://assets/sprites/cartas/carta-branca-01.png" id="1_grw2m"]
+[ext_resource type="Theme" uid="uid://bsmqxaw2jc0um" path="res://letter_theme.tres" id="2_j6rum"]
+
+[node name="Cartas" type="Node2D" unique_id=1830612570]
+
+[node name="CartaBranca01" type="Sprite2D" parent="." unique_id=554430818]
+position = Vector2(624, 350)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_grw2m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=513042217]
+offset_left = 419.99997
+offset_top = 140.0
+offset_right = 820.0
+offset_bottom = 640.0
+rotation = -0.13419579
+theme = ExtResource("2_j6rum")
+text = "Alou,
+
+	Top textos de teste já feitos.
+	Gosto muito, amo todosa,
+	bla bla bla testando texto testado gigante fgravmge 1 12 asopjigros aka lso
+
+vjos
+nodjikhue jalskd
+
+obns kjhsdfik;lAS
+se precidar"

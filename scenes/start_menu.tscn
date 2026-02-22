@@ -1,0 +1,288 @@
+[gd_scene format=3 uid="uid://cgcgktwmn5n18"]
+
+[ext_resource type="Theme" uid="uid://du6bm5cxlkus5" path="res://assets/resources/button_theme.tres" id="1_jwbto"]
+[ext_resource type="Script" uid="uid://b12n2l1w5g6r8" path="res://scripts/start_menu.gd" id="1_vpdu5"]
+[ext_resource type="Texture2D" uid="uid://cy0pags0ysiil" path="res://assets/sprites/start_background.jpeg" id="2_ppfnh"]
+[ext_resource type="Texture2D" uid="uid://lh41dm1sfmy3" path="res://assets/sprites/laura-render.png" id="2_v2mkm"]
+[ext_resource type="Texture2D" uid="uid://b6or8coo2yg6r" path="res://assets/sprites/fundo-inicial-papeis.png" id="3_7boi2"]
+[ext_resource type="Texture2D" uid="uid://vn030b1ng4wn" path="res://assets/sprites/game-icon-branco.png" id="4_v2mkm"]
+[ext_resource type="Script" uid="uid://oe5euhx4loc6" path="res://scripts/audio_control.gd" id="5_5byqq"]
+[ext_resource type="Script" uid="uid://nt221enavft7" path="res://scripts/fullscreen.gd" id="5_e58y3"]
+[ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="5_u4qax"]
+[ext_resource type="Script" uid="uid://chbcki22hvp5g" path="res://scripts/save_game.gd" id="7_7boi2"]
+
+[sub_resource type="Curve" id="Curve_7boi2"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Theme" id="Theme_5byqq"]
+default_font = ExtResource("5_u4qax")
+default_font_size = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpdu5"]
+bg_color = Color(0.08235294, 0, 0.23921569, 1)
+
+[node name="Start_Menu" type="Control" unique_id=51421290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vpdu5")
+curve = SubResource("Curve_7boi2")
+
+[node name="backLight2" type="TextureRect" parent="." unique_id=783518763]
+self_modulate = Color(1, 1, 1, 0.8)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 2560.0
+offset_bottom = 1439.0
+scale = Vector2(0.4998651, 0.4998651)
+texture = ExtResource("2_ppfnh")
+
+[node name="backLight" type="TextureRect" parent="." unique_id=159186181]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.6039216)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 2560.0
+offset_bottom = 1439.0
+scale = Vector2(0.4998651, 0.4998651)
+texture = ExtResource("2_ppfnh")
+
+[node name="papeis" type="TextureRect" parent="." unique_id=1024945731]
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
+scale = Vector2(0.500232, 0.500232)
+texture = ExtResource("3_7boi2")
+
+[node name="Options" type="VBoxContainer" parent="." unique_id=3794673]
+top_level = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = 16.0
+offset_right = 349.0
+offset_bottom = 322.0
+grow_vertical = 2
+
+[node name="resume" type="Button" parent="Options" unique_id=400315941]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme = ExtResource("1_jwbto")
+text = "CONTINUAR"
+alignment = 0
+
+[node name="new_game" type="Button" parent="Options" unique_id=1898721701]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme = ExtResource("1_jwbto")
+text = "NOVO JOGO"
+alignment = 0
+
+[node name="config" type="Button" parent="Options" unique_id=1933901658]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme = ExtResource("1_jwbto")
+text = "CONFIGURAÇÕES"
+alignment = 0
+
+[node name="credits" type="Button" parent="Options" unique_id=1690527796]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme = ExtResource("1_jwbto")
+text = "CRÉDITOS"
+alignment = 0
+
+[node name="quit" type="Button" parent="Options" unique_id=174301585]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+theme = ExtResource("1_jwbto")
+text = "SAIR"
+alignment = 0
+
+[node name="Settings" type="VBoxContainer" parent="." unique_id=838126440]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = 16.0
+offset_right = 349.0
+offset_bottom = 322.0
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="CheckPulse" type="CheckButton" parent="Settings" unique_id=552763530]
+layout_mode = 2
+button_pressed = true
+text = "Efeito de fundo"
+
+[node name="Fullscreen" type="CheckButton" parent="Settings" unique_id=1130223678]
+layout_mode = 2
+text = "Tela Cheia"
+script = ExtResource("5_e58y3")
+
+[node name="Master" type="HBoxContainer" parent="Settings" unique_id=2069564914]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="Settings/Master" unique_id=1966023249]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.66
+text = "Volume geral"
+horizontal_alignment = 1
+
+[node name="AudioControl" type="HSlider" parent="Settings/Master" unique_id=1666550393]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_5byqq")
+audioBusName = "Master"
+
+[node name="Musica" type="HBoxContainer" parent="Settings" unique_id=534571724]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="Settings/Musica" unique_id=1677374191]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.66
+text = "Musga"
+horizontal_alignment = 1
+
+[node name="AudioControl" type="HSlider" parent="Settings/Musica" unique_id=1736352692]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_5byqq")
+audioBusName = "Music"
+
+[node name="SFX" type="HBoxContainer" parent="Settings" unique_id=1607735255]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="Settings/SFX" unique_id=1234243303]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+text = "Efeitos sonoros"
+horizontal_alignment = 1
+
+[node name="AudioControl" type="HSlider" parent="Settings/SFX" unique_id=1043857537]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_5byqq")
+audioBusName = "SFX"
+
+[node name="return" type="Button" parent="Settings" unique_id=1689367973]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme = ExtResource("1_jwbto")
+text = "VOLTAR"
+alignment = 0
+
+[node name="Sobre" type="VBoxContainer" parent="." unique_id=242871010]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = 16.0
+offset_right = 349.0
+offset_bottom = 322.0
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sobre" unique_id=166903919]
+layout_mode = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_5byqq")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+text = "Equipe Chimarrão com Queijo
+A melhor de sul a sudeste
+Erica \"Cleo\" - artista
+Isa \"Izzy\" - programação
+Mat \"Macarte\" - programação e narrativa"
+fit_content = true
+
+[node name="return" type="Button" parent="Sobre" unique_id=406363428]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme = ExtResource("1_jwbto")
+text = "VOLTAR"
+alignment = 0
+
+[node name="fundo" type="Panel" parent="." unique_id=2047695139]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vpdu5")
+
+[node name="laura" type="TextureRect" parent="." unique_id=787550240]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2347.0
+offset_top = -1761.0
+offset_right = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.39768478, 0.39768478)
+pivot_offset_ratio = Vector2(1, 1)
+texture = ExtResource("2_v2mkm")
+
+[node name="Title" type="TextureRect" parent="." unique_id=759487592]
+layout_mode = 1
+offset_top = -104.99999
+offset_right = 2385.0
+offset_bottom = 1685.0
+scale = Vector2(0.3169712, 0.3169712)
+texture = ExtResource("4_v2mkm")
+
+[node name="Save" type="Node" parent="." unique_id=132964988]
+unique_name_in_owner = true
+script = ExtResource("7_7boi2")
+
+[connection signal="pressed" from="Options/new_game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Options/config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="Options/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Options/quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="Settings/CheckPulse" to="." method="_on_check_pulse_toggled"]
+[connection signal="toggled" from="Settings/Fullscreen" to="Settings/Fullscreen" method="_on_toggled"]
+[connection signal="value_changed" from="Settings/Master/AudioControl" to="Settings/Master/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/Musica/AudioControl" to="Settings/Musica/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/SFX/AudioControl" to="Settings/SFX/AudioControl" method="_on_value_changed"]
+[connection signal="pressed" from="Settings/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Sobre/return" to="." method="_on_return_pressed"]
