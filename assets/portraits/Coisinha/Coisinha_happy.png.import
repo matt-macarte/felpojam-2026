@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hfwxgsylpi1d"
-path="res://.godot/imported/laura_excited.png-4e597261bd4c8ca2507a0f34990f798c.ctex"
+uid="uid://m7f868dspafo"
+path="res://.godot/imported/Coisinha_happy.png-75f988bca443c308c1386c11a1959775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/portraits/laura_excited.png"
-dest_files=["res://.godot/imported/laura_excited.png-4e597261bd4c8ca2507a0f34990f798c.ctex"]
+source_file="res://assets/portraits/Coisinha/Coisinha_happy.png"
+dest_files=["res://.godot/imported/Coisinha_happy.png-75f988bca443c308c1386c11a1959775.ctex"]
 
 [params]
 

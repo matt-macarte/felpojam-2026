@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dc3civy03261s"
-path="res://.godot/imported/The Muppet Font.otf-afcff4c956ac56f61bcbd4fdecc3fcdc.fontdata"
+uid="uid://cc3wd08pa20r6"
+path="res://.godot/imported/PlaywriteUSModern-VariableFont_wght.ttf-1689fe6c120b979e7dd38060b984c1d0.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/The Muppet Font.otf"
-dest_files=["res://.godot/imported/The Muppet Font.otf-afcff4c956ac56f61bcbd4fdecc3fcdc.fontdata"]
+source_file="res://assets/fonts/Playwrite_US_Modern/PlaywriteUSModern-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/PlaywriteUSModern-VariableFont_wght.ttf-1689fe6c120b979e7dd38060b984c1d0.fontdata"]
 
 [params]
 

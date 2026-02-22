@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://im8srkxet22p"
-path="res://.godot/imported/laura_default.png-545fa0e0f9b0c14b8a8934fd061ec3e0.ctex"
+uid="uid://bc6ruoa88riiy"
+path="res://.godot/imported/Coisinha_neutral.png-cfba2301c8bd9f4e73fe4d78ca2785ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/portraits/laura_default.png"
-dest_files=["res://.godot/imported/laura_default.png-545fa0e0f9b0c14b8a8934fd061ec3e0.ctex"]
+source_file="res://assets/portraits/Coisinha/Coisinha_neutral.png"
+dest_files=["res://.godot/imported/Coisinha_neutral.png-cfba2301c8bd9f4e73fe4d78ca2785ae.ctex"]
 
 [params]
 

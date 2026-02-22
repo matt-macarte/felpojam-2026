@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw2sdms8nd0k3"
-path="res://.godot/imported/laura_embarassed.png-65a56d429ccb391b4ae1a9f598e1f707.ctex"
+uid="uid://d02wvky1ddetb"
+path="res://.godot/imported/laura_excited(2).png-c795d7aa221b2546a504817cb332d492.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/portraits/laura_embarassed.png"
-dest_files=["res://.godot/imported/laura_embarassed.png-65a56d429ccb391b4ae1a9f598e1f707.ctex"]
+source_file="res://assets/portraits/Laura/laura_excited(2).png"
+dest_files=["res://.godot/imported/laura_excited(2).png-c795d7aa221b2546a504817cb332d492.ctex"]
 
 [params]
 
