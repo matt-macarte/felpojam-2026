@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djivoqmqcfu"
-path="res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"
+uid="uid://vn030b1ng4wn"
+path="res://.godot/imported/game_icon_branco.png-61417fcd509ea67c1370723159ffdea3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fundo-inicial-papeis.png"
-dest_files=["res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"]
+source_file="res://assets/sprites/game_icon_branco.png"
+dest_files=["res://.godot/imported/game_icon_branco.png-61417fcd509ea67c1370723159ffdea3.ctex"]
 
 [params]
 

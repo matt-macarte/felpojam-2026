@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djivoqmqcfu"
-path="res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"
+uid="uid://dp2mksdw7134p"
+path="res://.godot/imported/carimbo_odio.png-82e943ea09b976df61272d9cab85b431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fundo-inicial-papeis.png"
-dest_files=["res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"]
+source_file="res://assets/sprites/carimbo_odio.png"
+dest_files=["res://.godot/imported/carimbo_odio.png-82e943ea09b976df61272d9cab85b431.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djivoqmqcfu"
-path="res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"
+uid="uid://bgo6tx8il8gfg"
+path="res://.godot/imported/esquenta_cera_fogo.png-9a07c3132e20bca241a163292c3d8393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fundo-inicial-papeis.png"
-dest_files=["res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"]
+source_file="res://assets/sprites/esquenta_cera_fogo.png"
+dest_files=["res://.godot/imported/esquenta_cera_fogo.png-9a07c3132e20bca241a163292c3d8393.ctex"]
 
 [params]
 

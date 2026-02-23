@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djivoqmqcfu"
-path="res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"
+uid="uid://lh41dm1sfmy3"
+path="res://.godot/imported/laura_render.png-730a6c44922c130f9b6f79571562e3c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fundo-inicial-papeis.png"
-dest_files=["res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"]
+source_file="res://assets/sprites/laura_render.png"
+dest_files=["res://.godot/imported/laura_render.png-730a6c44922c130f9b6f79571562e3c5.ctex"]
 
 [params]
 

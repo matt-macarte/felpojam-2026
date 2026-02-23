@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://c4aafp744uhnm"]
+
+[ext_resource type="Texture2D" uid="uid://dp7e8xv7vpcev" path="res://assets/sprites/back_mesa_carta.png" id="1_oa3ec"]
+[ext_resource type="Script" uid="uid://dv1kr8y21hrn4" path="res://scripts/carimbador.gd" id="2_0j88v"]
+[ext_resource type="Texture2D" uid="uid://dluo1gjqk3ash" path="res://assets/sprites/carimbador_02.png" id="2_pfh0x"]
+[ext_resource type="Texture2D" uid="uid://cshe32e1p7rh" path="res://assets/sprites/cartas/carta_branca_02.png" id="3_8d5tt"]
+[ext_resource type="Texture2D" uid="uid://dmls4wxqtnxba" path="res://assets/sprites/carimbador_01.png" id="3_qqmn1"]
+[ext_resource type="Texture2D" uid="uid://bkhbq5o6l4jd4" path="res://assets/sprites/colher_derretido.png" id="6_ww7cf"]
+[ext_resource type="Texture2D" uid="uid://flb65uo7k17v" path="res://assets/sprites/colher_solidos.png" id="7_cb2vo"]
+[ext_resource type="Texture2D" uid="uid://by2ppq1jg3gwn" path="res://assets/sprites/colher_vazia.png" id="8_v47jw"]
+[ext_resource type="Texture2D" uid="uid://80l0i3bcrsre" path="res://assets/sprites/cera_vermelha.png" id="9_fnrcm"]
+[ext_resource type="Texture2D" uid="uid://b8twglgncuofj" path="res://assets/sprites/esquenta_cera_01.png" id="10_psngt"]
+[ext_resource type="Texture2D" uid="uid://boiwo3ob6jruw" path="res://assets/sprites/esquenta_cera_05.png" id="11_8d5tt"]
+[ext_resource type="Texture2D" uid="uid://mfo7jqtbgsvd" path="res://assets/sprites/esquenta_cera_04.png" id="12_n7i0p"]
+[ext_resource type="Texture2D" uid="uid://cf8rkljkvmktq" path="res://assets/sprites/esquenta_cera_03.png" id="13_yecmt"]
+[ext_resource type="Texture2D" uid="uid://dxfrvfh83scuh" path="res://assets/sprites/esquenta_cera_02.png" id="14_1am32"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_movqf"]
+points = PackedVector2Array(0.4937694, -155.2819, 0.29717612, -276.18, -0.18287754, -201.86649, -0.4389062, -226.26794, -0.6400714, -135.3171, -1.2115638, -78.75009, -0.9921107, 63.221954, -0.24688482, 297.25406, 1.2847149, 63.221954, 0.5897801, -151.95444)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2pl6"]
+radius = 89.60298
+height = 243.69897
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2cnrx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_psngt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8d5tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n7i0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yecmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n7i0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1am32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n7i0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8d5tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yecmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n7i0p")
+}],
+"loop": true,
+"name": &"fogo",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_psngt"]
+radius = 87.97087
+height = 244.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmwhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ww7cf")
+}],
+"loop": true,
+"name": &"derretida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cb2vo")
+}],
+"loop": true,
+"name": &"solida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_v47jw")
+}],
+"loop": true,
+"name": &"vazia",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_we2xn"]
+radius = 88.26117
+height = 436.66064
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0j88v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pfh0x")
+}],
+"loop": true,
+"name": &"carimbar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qqmn1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0j88v"]
+radius = 4.3351746
+height = 33.318195
+
+[node name="ZoomMesa" type="Node2D" unique_id=1970445107]
+
+[node name="BackMesaCarta" type="Sprite2D" parent="." unique_id=1680949444]
+show_behind_parent = true
+position = Vector2(566, 319)
+scale = Vector2(0.5577724, 0.5577724)
+texture = ExtResource("1_oa3ec")
+
+[node name="carta" type="Area2D" parent="." unique_id=584249766]
+top_level = true
+position = Vector2(861, 374)
+scale = Vector2(0.32145327, 0.32145327)
+
+[node name="CartaBranca02" type="Sprite2D" parent="carta" unique_id=442903883]
+texture = ExtResource("3_8d5tt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carta" unique_id=791045508]
+scale = Vector2(680.42725, 2.8047183)
+shape = SubResource("ConvexPolygonShape2D_movqf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="carta" unique_id=1427055368]
+visible = false
+scale = Vector2(-89.57091, -54.253082)
+polygon = PackedVector2Array(3.4383526, 11.52534, 4.966509, 6.8807993, 9.377323, 4.128479, 7.710243, -3.3257217, 1.9449272, -15.539143, -9.689903, -3.440401, -4.1677, 8.3143, -2.2575035, 14.27766, 1.6670799, 10.321199)
+
+[node name="cera" type="Area2D" parent="." unique_id=1081024572]
+position = Vector2(144, 627)
+scale = Vector2(0.67340505, 0.67340505)
+
+[node name="CeraVermelha" type="Sprite2D" parent="cera" unique_id=1017341066]
+texture = ExtResource("9_fnrcm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cera" unique_id=848609587]
+position = Vector2(-1.4849904, -13.364913)
+rotation = 1.5682877
+shape = SubResource("CapsuleShape2D_y2pl6")
+
+[node name="fogo" type="Area2D" parent="." unique_id=1551702857]
+position = Vector2(187, 121)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fogo" unique_id=1107558472]
+position = Vector2(-7.5, 33.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2cnrx")
+frame_progress = 0.10541981
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fogo" unique_id=954517751]
+position = Vector2(0.5, 0.5000076)
+rotation = 1.5775731
+shape = SubResource("CapsuleShape2D_psngt")
+
+[node name="colher" type="Area2D" parent="." unique_id=147391537]
+position = Vector2(191.00005, 412)
+rotation = 0.3732695
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="colher" unique_id=1395616917]
+position = Vector2(-0.10043335, 0.2480774)
+scale = Vector2(0.6458105, 0.6458105)
+sprite_frames = SubResource("SpriteFrames_lmwhv")
+animation = &"vazia"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colher" unique_id=1853467349]
+position = Vector2(-0.10043346, 0.24804497)
+rotation = 1.4805307
+scale = Vector2(0.3501622, 0.8612113)
+shape = SubResource("CapsuleShape2D_we2xn")
+
+[node name="carimbador" type="Area2D" parent="." unique_id=969493557]
+position = Vector2(559, 137)
+rotation = -0.08752328
+scale = Vector2(0.5863776, 0.5863776)
+script = ExtResource("2_0j88v")
+
+[node name="CarimbadorImg" type="AnimatedSprite2D" parent="carimbador" unique_id=218379431]
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_0j88v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carimbador" unique_id=1289285020]
+position = Vector2(6.8213863, -22.17004)
+rotation = 1.2490927
+scale = Vector2(17.416225, 17.416225)
+shape = SubResource("CapsuleShape2D_0j88v")
+
+[connection signal="mouse_entered" from="carimbador" to="carimbador" method="_on_mouse_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djivoqmqcfu"
-path="res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"
+uid="uid://by2ppq1jg3gwn"
+path="res://.godot/imported/colher_vazia.png-63a3cb5450149fc6f9c8173671cc8310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fundo-inicial-papeis.png"
-dest_files=["res://.godot/imported/fundo-inicial-papeis.png-0223784d1f47f436dd40bb62491fbed3.ctex"]
+source_file="res://assets/sprites/colher_vazia.png"
+dest_files=["res://.godot/imported/colher_vazia.png-63a3cb5450149fc6f9c8173671cc8310.ctex"]
 
 [params]
 

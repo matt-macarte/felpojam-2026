@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cy3dpmmhj8ut3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1786k"]
+bg_color = Color(0.105882354, 0.039215688, 0.23137255, 1)
+
+[node name="Transition" type="CanvasLayer" unique_id=241530640]
+
+[node name="Panel" type="Panel" parent="." unique_id=461365186]
+offset_right = 39.659252
+offset_bottom = 38.262127
+scale = Vector2(32.27494, 18.843699)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1786k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=184362807]
