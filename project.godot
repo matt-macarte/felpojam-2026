@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://b4rb6cng2fk01"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+SceneLoader="*uid://bptenmtm05koi"
 
 [dialogic]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="1_xvg0k"]
 
-[sub_resource type="Image" id="Image_xvg0k"]
+[sub_resource type="Image" id="Image_klhcc"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "format": "RGBA8",
@@ -12,7 +12,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_aqy3o"]
-image = SubResource("Image_xvg0k")
+image = SubResource("Image_klhcc")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmufk"]
 content_margin_left = 4.0

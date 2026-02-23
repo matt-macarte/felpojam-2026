@@ -1,14 +1,15 @@
 extends Control
 
+@export var cena_inicial: StringName = &""
+
 @onready var save: Node = %Save
 @onready var resume: Button = %resume
-
 
 @onready var options: VBoxContainer = $Options
 @onready var settings: VBoxContainer = $Settings
 @onready var sobre: VBoxContainer = $Sobre
 
-@onready var back_light: TextureRect = %backLight
+@onready var back_light_animation: AnimationPlayer = %AnimationPlayer
 
 # luz pulsando de fundo
 @export var pulse :bool = true
@@ -40,44 +41,15 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	time2 = time
-	if pulse == true:
-		transparency_flow()
+	
+	if pulse == false:
+		back_light_animation.current_animation = "idle" 
+	elif pulse == true:
+		back_light_animation.current_animation = "light_animation" 
 	if Input.is_action_pressed("cancel"):
 		get_tree().quit()
 	
 	
-	if fadeOut == true:
-		print("thcua")
-		fade_out()
-		
-	#print(time)
-
-
-func transparency_flow() -> void:
-	time += get_process_delta_time() * dir * 0.8
-	
-	if time >= 1.0: dir = -1
-	elif time <= 0: dir = 1
-	change = alpha_min + time * alpha_add
-	
-	back_light.self_modulate = Color(1.0,1.0,1.0,change)
-
-func fade_out() -> void:
-	options.modulate = Color(1.0,1.0,1.0,time)
-	alpha_min = 0.1
-	# mudar toda essa transicao pra ser um canvas layer fora dessa cena
-	if time <= 0.01:
-		#get_tree().quit()
-		back_light.top_level = true
-		change = 0.8
-		options.visible = false
-		bye()
-	
-
-func bye() -> void:
-	
-	await get_tree().create_timer(1).timeout
-	get_tree().quit()
 
 
 func _on_resume_pressed() -> void:
@@ -94,7 +66,7 @@ func _on_check_pulse_toggled(toggled_on: bool) -> void:
 		pulse = true
 	else:
 		pulse = false
-		back_light.self_modulate = Color(1.0,1.0,1.0,0.8)
+		
 
 
 func _on_config_pressed() -> void:
@@ -113,7 +85,4 @@ func _on_return_pressed() -> void:
 
 
 func _on_new_game_pressed() -> void:
-	
-	fadeOut = true
-	
-	
+	SceneLoader.load_scene(cena_inicial)

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://di4r6ivm6cuwi"]
 
+[ext_resource type="Script" uid="uid://da4byaittpjbh" path="res://scripts/trampo.gd" id="1_c0umb"]
 [ext_resource type="Texture2D" uid="uid://brv0djqovwxai" path="res://assets/sprites/background_trabalho.png" id="1_fbqnr"]
 [ext_resource type="Texture2D" uid="uid://dmls4wxqtnxba" path="res://assets/sprites/carimbador_01.png" id="2_f4fkh"]
 [ext_resource type="Texture2D" uid="uid://80l0i3bcrsre" path="res://assets/sprites/cera_vermelha.png" id="3_qd43g"]
@@ -56,6 +57,7 @@ radius = 162.0
 height = 440.0
 
 [node name="Trampo" type="Node2D" unique_id=1024828134]
+script = ExtResource("1_c0umb")
 metadata/_edit_vertical_guides_ = [1280.0]
 metadata/_edit_horizontal_guides_ = [720.0]
 

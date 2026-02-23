@@ -3,9 +3,9 @@
 [ext_resource type="Theme" uid="uid://du6bm5cxlkus5" path="res://assets/resources/button_theme.tres" id="1_jwbto"]
 [ext_resource type="Script" uid="uid://b12n2l1w5g6r8" path="res://scripts/start_menu.gd" id="1_vpdu5"]
 [ext_resource type="Texture2D" uid="uid://cy0pags0ysiil" path="res://assets/sprites/start_background.jpeg" id="2_ppfnh"]
-[ext_resource type="Texture2D" uid="uid://lh41dm1sfmy3" path="res://assets/sprites/laura-render.png" id="2_v2mkm"]
-[ext_resource type="Texture2D" uid="uid://b6or8coo2yg6r" path="res://assets/sprites/fundo-inicial-papeis.png" id="3_7boi2"]
-[ext_resource type="Texture2D" uid="uid://vn030b1ng4wn" path="res://assets/sprites/game-icon-branco.png" id="4_v2mkm"]
+[ext_resource type="Texture2D" uid="uid://lh41dm1sfmy3" path="res://assets/sprites/laura_render.png" id="2_v2mkm"]
+[ext_resource type="Texture2D" uid="uid://djivoqmqcfu" path="res://assets/sprites/fundo-inicial-papeis.png" id="3_7boi2"]
+[ext_resource type="Texture2D" uid="uid://vn030b1ng4wn" path="res://assets/sprites/game_icon_branco.png" id="4_v2mkm"]
 [ext_resource type="Script" uid="uid://oe5euhx4loc6" path="res://scripts/audio_control.gd" id="5_5byqq"]
 [ext_resource type="Script" uid="uid://nt221enavft7" path="res://scripts/fullscreen.gd" id="5_e58y3"]
 [ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="5_u4qax"]
@@ -19,6 +19,57 @@ point_count = 2
 default_font = ExtResource("5_u4qax")
 default_font_size = 21
 
+[sub_resource type="Animation" id="Animation_e58y3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%backLight:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_apowk"]
+resource_name = "idle"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%backLight:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_vnuwp"]
+resource_name = "light_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%backLight:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.39215687, -0.25, 0, 0.25, 0, 1, -0.13333334, -0.1013072, 0, 0, 0.39215687, -0.13333334, 0.1013072, 0, 0),
+"times": PackedFloat32Array(0, 2.5, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_egh8s"]
+_data = {
+&"RESET": SubResource("Animation_e58y3"),
+&"idle": SubResource("Animation_apowk"),
+&"light_animation": SubResource("Animation_vnuwp")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpdu5"]
 bg_color = Color(0.08235294, 0, 0.23921569, 1)
 
@@ -30,20 +81,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vpdu5")
+cena_inicial = &"uid://di4r6ivm6cuwi"
 curve = SubResource("Curve_7boi2")
-
-[node name="backLight2" type="TextureRect" parent="." unique_id=783518763]
-self_modulate = Color(1, 1, 1, 0.8)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 2560.0
-offset_bottom = 1439.0
-scale = Vector2(0.4998651, 0.4998651)
-texture = ExtResource("2_ppfnh")
 
 [node name="backLight" type="TextureRect" parent="." unique_id=159186181]
 unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0.6039216)
 layout_mode = 0
 offset_top = -1.0
 offset_right = 2560.0
@@ -236,6 +278,12 @@ size_flags_vertical = 10
 theme = ExtResource("1_jwbto")
 text = "VOLTAR"
 alignment = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1590693210]
+unique_name_in_owner = true
+root_node = NodePath("../fundo")
+libraries/ = SubResource("AnimationLibrary_egh8s")
+autoplay = &"light_animation"
 
 [node name="fundo" type="Panel" parent="." unique_id=2047695139]
 show_behind_parent = true
