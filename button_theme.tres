@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://du6bm5cxlkus5"]
 
 [ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="1_y3u7b"]
-[ext_resource type="FontFile" uid="uid://dc3civy03261s" path="res://assets/fonts/The Muppet Font.otf" id="2_jjpe7"]
+[ext_resource type="FontFile" uid="uid://dc3civy03261s" path="res://assets/fonts/The Muppet Font/The Muppet Font.otf" id="2_jjpe7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jjpe7"]
 
