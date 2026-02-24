@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://c737ql4in1ow7"]
+
+[ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="1_hdmo1"]
+[ext_resource type="Texture2D" uid="uid://bvrnpkl6n5otd" path="res://assets/fundo_menu.png" id="1_p81d2"]
+[ext_resource type="StyleBox" uid="uid://bpbdue6akb0tm" path="res://styles/button_hover.tres" id="3_2nc7s"]
+[ext_resource type="StyleBox" uid="uid://dvxu83tgrbgy0" path="res://styles/button_normal.tres" id="3_p81d2"]
+[ext_resource type="StyleBox" uid="uid://np024le3wwnk" path="res://styles/button_pressed.tres" id="4_2nc7s"]
+
+[sub_resource type="Theme" id="Theme_nwcfo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nc7s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_d3xb4"]
+
+[node name="Pause_menu" type="Control" unique_id=1248953011]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nwcfo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=506350938]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FundoMenu" type="Sprite2D" parent="." unique_id=736460562]
+position = Vector2(640, 360)
+texture = ExtResource("1_p81d2")
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1532661409]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -193.0
+offset_right = 206.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2nc7s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2" unique_id=254783736]
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="continuar" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=251004079]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_p81d2")
+theme_override_styles/pressed = ExtResource("4_2nc7s")
+theme_override_styles/hover = ExtResource("3_2nc7s")
+text = "CONTINUAR"
+
+[node name="reiniciar" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=985324170]
+layout_mode = 2
+theme = SubResource("Theme_d3xb4")
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_p81d2")
+theme_override_styles/pressed = ExtResource("4_2nc7s")
+theme_override_styles/hover = ExtResource("3_2nc7s")
+text = "REINICIAR"
+
+[node name="opções" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=1502132183]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_p81d2")
+theme_override_styles/pressed = ExtResource("4_2nc7s")
+theme_override_styles/hover = ExtResource("3_2nc7s")
+text = "OPÇÕES"
+
+[node name="voltar_ao_menu" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=1717649457]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_p81d2")
+theme_override_styles/pressed = ExtResource("4_2nc7s")
+theme_override_styles/hover = ExtResource("3_2nc7s")
+text = "VOLTAR AO MENU"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=456588791]
