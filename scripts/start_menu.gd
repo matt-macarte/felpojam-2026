@@ -13,9 +13,6 @@ extends Control
 
 # luz pulsando de fundo
 @export var pulse :bool = true
-@export var curve :Curve = Curve.new()
-@export_range(0.0,1.0) var alpha_min :float = 0.0
-@export_range(0.0,1.0) var alpha_add :float = 0.8
 
 var change :float
 var dir := 1
@@ -36,7 +33,6 @@ func _ready() -> void:
 	else:
 		resume.visible = true
 		
-	change = alpha_min
 
 
 func _process(_delta: float) -> void:
@@ -66,23 +62,18 @@ func _on_check_pulse_toggled(toggled_on: bool) -> void:
 		pulse = true
 	else:
 		pulse = false
-		
-
 
 func _on_config_pressed() -> void:
 	options.visible = false
 	settings.visible = true
 
-
 func _on_credits_pressed() -> void:
 	options.visible = false
 	sobre.visible = true
 
-
-
 func _on_return_pressed() -> void:
 	_ready()
 
-
 func _on_new_game_pressed() -> void:
+	Constants.variaveis.cena = "purple"
 	SceneLoader.load_scene(cena_inicial)

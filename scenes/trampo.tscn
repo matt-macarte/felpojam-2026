@@ -8,14 +8,29 @@
 [ext_resource type="Texture2D" uid="uid://by2ppq1jg3gwn" path="res://assets/sprites/colher_vazia.png" id="5_r73rw"]
 [ext_resource type="Texture2D" uid="uid://bkvm2odol3krk" path="res://assets/sprites/coisinha_03.png" id="6_7hon6"]
 [ext_resource type="Texture2D" uid="uid://cry6fpotr3xj7" path="res://assets/sprites/coisinha_04.png" id="7_c0umb"]
+[ext_resource type="Script" uid="uid://dr5l2fttg4t6y" path="res://scripts/coisinha.gd" id="7_ywesc"]
 [ext_resource type="Texture2D" uid="uid://c4d3vjvhmglsh" path="res://assets/sprites/coisinha_01.png" id="8_6m82b"]
 [ext_resource type="Texture2D" uid="uid://drdcu6s4jlktv" path="res://assets/sprites/coisinha_02.png" id="9_ywesc"]
+[ext_resource type="PackedScene" uid="uid://c4aafp744uhnm" path="res://scenes/zoom_mesa.tscn" id="11_6m82b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57ouo"]
-size = Vector2(733.5, 357)
+size = Vector2(401, 230.99998)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ywesc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5qfdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r73rw"]
 size = Vector2(138.97174, 220.0946)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywesc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.15686275, 0.98039216, 0.85490197, 1)
+border_blend = true
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5qfdx"]
 animations = [{
@@ -90,12 +105,22 @@ scale = Vector2(0.2766731, 0.2766731)
 texture = ExtResource("5_r73rw")
 
 [node name="AreaMesa" type="Area2D" parent="." unique_id=578479425]
-position = Vector2(549, 539)
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(569, 602)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMesa" unique_id=1606987637]
+position = Vector2(0.65283203, -6.5)
 shape = SubResource("RectangleShape2D_57ouo")
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="AreaMesa" unique_id=358435434]
+position = Vector2(1.152832, -4.6471634)
+scale = Vector2(390.30566, 226.70572)
+mesh = SubResource("QuadMesh_ywesc")
+texture = SubResource("CanvasTexture_5qfdx")
+
 [node name="BruxaMes" type="Area2D" parent="." unique_id=741166761]
+visible = false
 position = Vector2(606, 139)
 scale = Vector2(0.9605263, 0.9056604)
 
@@ -104,7 +129,15 @@ position = Vector2(1.9073486e-06, 0)
 scale = Vector2(1.1777778, 0.48051947)
 shape = SubResource("RectangleShape2D_r73rw")
 
+[node name="Panel" type="Panel" parent="BruxaMes" unique_id=2145527199]
+offset_left = -85.36987
+offset_top = -56.312485
+offset_right = 84.328735
+offset_bottom = 62.9375
+theme_override_styles/panel = SubResource("StyleBoxFlat_ywesc")
+
 [node name="Cartazes" type="Area2D" parent="." unique_id=584667144]
+visible = false
 position = Vector2(405, 150)
 scale = Vector2(0.9605263, 1.6433961)
 
@@ -113,7 +146,15 @@ position = Vector2(1.9073486e-06, 0)
 scale = Vector2(1.1777778, 0.48051947)
 shape = SubResource("RectangleShape2D_r73rw")
 
+[node name="Panel" type="Panel" parent="Cartazes" unique_id=2049487859]
+offset_left = -83.28769
+offset_top = -57.80712
+offset_right = 86.41092
+offset_bottom = 61.442863
+theme_override_styles/panel = SubResource("StyleBoxFlat_ywesc")
+
 [node name="Janelas" type="Area2D" parent="." unique_id=141163869]
+visible = false
 position = Vector2(90, 176)
 scale = Vector2(1.2793219, 3.3531578)
 
@@ -130,11 +171,24 @@ shape = SubResource("RectangleShape2D_r73rw")
 [node name="Coisinha" type="Area2D" parent="." unique_id=2006880011]
 position = Vector2(1069, 320)
 scale = Vector2(0.5651287, 0.5651287)
+script = ExtResource("7_ywesc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coisinha" unique_id=626411961]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_5qfdx")
-animation = &"feliz"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coisinha" unique_id=621734556]
 shape = SubResource("CapsuleShape2D_dlqvq")
+
+[node name="ZoomMesa" parent="." unique_id=1970445107 instance=ExtResource("11_6m82b")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="mouse_entered" from="AreaMesa" to="." method="_on_area_mesa_mouse_entered"]
+[connection signal="mouse_exited" from="AreaMesa" to="." method="_on_area_mesa_mouse_exited"]
+[connection signal="mouse_entered" from="BruxaMes" to="." method="_on_bruxa_mes_mouse_entered"]
+[connection signal="mouse_exited" from="BruxaMes" to="." method="_on_bruxa_mes_mouse_exited"]
+[connection signal="mouse_entered" from="Cartazes" to="." method="_on_cartazes_mouse_entered"]
+[connection signal="mouse_exited" from="Cartazes" to="." method="_on_cartazes_mouse_exited"]
+[connection signal="mouse_entered" from="Coisinha" to="Coisinha" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Coisinha" to="Coisinha" method="_on_mouse_exited"]

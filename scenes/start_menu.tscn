@@ -11,10 +11,6 @@
 [ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="5_u4qax"]
 [ext_resource type="Script" uid="uid://chbcki22hvp5g" path="res://scripts/save_game.gd" id="7_7boi2"]
 
-[sub_resource type="Curve" id="Curve_7boi2"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Theme" id="Theme_5byqq"]
 default_font = ExtResource("5_u4qax")
 default_font_size = 21
@@ -82,7 +78,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vpdu5")
 cena_inicial = &"uid://di4r6ivm6cuwi"
-curve = SubResource("Curve_7boi2")
 
 [node name="backLight" type="TextureRect" parent="." unique_id=159186181]
 unique_name_in_owner = true
