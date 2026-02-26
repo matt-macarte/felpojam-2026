@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dluo1gjqk3ash" path="res://assets/sprites/carimbador_02.png" id="2_pfh0x"]
 [ext_resource type="Texture2D" uid="uid://cshe32e1p7rh" path="res://assets/sprites/cartas/carta_branca_02.png" id="3_8d5tt"]
 [ext_resource type="Texture2D" uid="uid://dmls4wxqtnxba" path="res://assets/sprites/carimbador_01.png" id="3_qqmn1"]
+[ext_resource type="Script" uid="uid://b1rhwwc134qa2" path="res://scripts/fogo_cera.gd" id="5_n7i0p"]
 [ext_resource type="Texture2D" uid="uid://bkhbq5o6l4jd4" path="res://assets/sprites/colher_derretido.png" id="6_ww7cf"]
 [ext_resource type="Texture2D" uid="uid://flb65uo7k17v" path="res://assets/sprites/colher_solidos.png" id="7_cb2vo"]
 [ext_resource type="Texture2D" uid="uid://by2ppq1jg3gwn" path="res://assets/sprites/colher_vazia.png" id="8_v47jw"]
@@ -21,7 +22,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node:position:x")
+tracks/0/path = NodePath("Itens:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -32,7 +33,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node:position:y")
+tracks/1/path = NodePath("Itens:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +44,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Node:position")
+tracks/2/path = NodePath("Itens:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -59,7 +60,7 @@ length = 2.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node:position:x")
+tracks/0/path = NodePath("Itens:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -70,7 +71,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Node:position:y")
+tracks/1/path = NodePath("Itens:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -84,7 +85,7 @@ resource_name = "sem"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node:position")
+tracks/0/path = NodePath("Itens:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -219,87 +220,101 @@ metadata/_edit_vertical_guides_ = [1280.0]
 libraries/ = SubResource("AnimationLibrary_8d5tt")
 autoplay = &"entrar"
 
-[node name="Node" type="Node2D" parent="." unique_id=2094504085]
+[node name="Itens" type="Node2D" parent="." unique_id=2094504085]
 
-[node name="BackMesaCarta" type="Sprite2D" parent="Node" unique_id=1680949444]
+[node name="BackMesaCarta" type="Sprite2D" parent="Itens" unique_id=1680949444]
 show_behind_parent = true
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_oa3ec")
 centered = false
 
-[node name="carta" type="Area2D" parent="Node" unique_id=584249766]
+[node name="carta" type="Area2D" parent="Itens" unique_id=584249766]
+unique_name_in_owner = true
 position = Vector2(861, 374)
 scale = Vector2(0.32145327, 0.32145327)
 
-[node name="CartaBranca02" type="Sprite2D" parent="Node/carta" unique_id=442903883]
+[node name="CartaBranca02" type="Sprite2D" parent="Itens/carta" unique_id=442903883]
 texture = ExtResource("3_8d5tt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/carta" unique_id=791045508]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/carta" unique_id=791045508]
 scale = Vector2(680.42725, 2.8047183)
 shape = SubResource("ConvexPolygonShape2D_movqf")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node/carta" unique_id=1427055368]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Itens/carta" unique_id=1427055368]
 visible = false
 scale = Vector2(-89.57091, -54.253082)
 polygon = PackedVector2Array(3.4383526, 11.52534, 4.966509, 6.8807993, 9.377323, 4.128479, 7.710243, -3.3257217, 1.9449272, -15.539143, -9.689903, -3.440401, -4.1677, 8.3143, -2.2575035, 14.27766, 1.6670799, 10.321199)
 
-[node name="cera" type="Area2D" parent="Node" unique_id=1081024572]
+[node name="cera" type="Area2D" parent="Itens" unique_id=1081024572]
+unique_name_in_owner = true
 position = Vector2(144, 627)
 scale = Vector2(0.67340505, 0.67340505)
 
-[node name="CeraVermelha" type="Sprite2D" parent="Node/cera" unique_id=1017341066]
+[node name="CeraVermelha" type="Sprite2D" parent="Itens/cera" unique_id=1017341066]
 texture = ExtResource("9_fnrcm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/cera" unique_id=848609587]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/cera" unique_id=848609587]
 position = Vector2(-1.4849904, -13.364913)
 rotation = 1.5682877
 shape = SubResource("CapsuleShape2D_y2pl6")
 
-[node name="fogo" type="Area2D" parent="Node" unique_id=1551702857]
+[node name="fogo" type="Area2D" parent="Itens" unique_id=1551702857 node_paths=PackedStringArray("colher")]
+unique_name_in_owner = true
 position = Vector2(187, 121)
+script = ExtResource("5_n7i0p")
+colher = NodePath("../colher")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node/fogo" unique_id=1107558472]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Itens/fogo" unique_id=1107558472]
 position = Vector2(-7.5, 33.5)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_2cnrx")
-frame_progress = 0.10541981
+animation = &"fogo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/fogo" unique_id=954517751]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/fogo" unique_id=954517751]
 position = Vector2(0.5, 0.5000076)
 rotation = 1.5775731
 shape = SubResource("CapsuleShape2D_psngt")
 
-[node name="colher" type="Area2D" parent="Node" unique_id=147391537]
+[node name="colher" type="Area2D" parent="Itens" unique_id=147391537]
+unique_name_in_owner = true
 position = Vector2(191.00005, 412)
 rotation = 0.37326947
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node/colher" unique_id=1395616917]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Itens/colher" unique_id=1395616917]
 position = Vector2(-0.10043335, 0.2480774)
 scale = Vector2(0.6458105, 0.6458105)
 sprite_frames = SubResource("SpriteFrames_lmwhv")
 animation = &"vazia"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/colher" unique_id=1853467349]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/colher" unique_id=1853467349]
 position = Vector2(-0.10043346, 0.24804497)
 rotation = 1.4805307
 scale = Vector2(0.3501622, 0.8612113)
 shape = SubResource("CapsuleShape2D_we2xn")
 
-[node name="carimbador" type="Area2D" parent="Node" unique_id=969493557]
+[node name="carimbador" type="Area2D" parent="Itens" unique_id=969493557]
+unique_name_in_owner = true
 position = Vector2(559, 137)
 rotation = -0.087523274
 scale = Vector2(0.5863776, 0.5863776)
 script = ExtResource("2_0j88v")
 
-[node name="CarimbadorImg" type="AnimatedSprite2D" parent="Node/carimbador" unique_id=218379431]
+[node name="CarimbadorImg" type="AnimatedSprite2D" parent="Itens/carimbador" unique_id=218379431]
 scale = Vector2(0.99999994, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_0j88v")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/carimbador" unique_id=1289285020]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Itens/carimbador" unique_id=1289285020]
 position = Vector2(6.8213863, -22.17004)
 rotation = 1.2490927
 scale = Vector2(17.416225, 17.416225)
 shape = SubResource("CapsuleShape2D_0j88v")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="mouse_entered" from="Node/carimbador" to="Node/carimbador" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Itens/carta" to="." method="_on_carta_mouse_entered"]
+[connection signal="mouse_exited" from="Itens/carta" to="." method="_on_carta_mouse_exited"]
+[connection signal="mouse_entered" from="Itens/cera" to="." method="_on_cera_mouse_entered"]
+[connection signal="mouse_exited" from="Itens/cera" to="." method="_on_cera_mouse_exited"]
+[connection signal="mouse_entered" from="Itens/colher" to="." method="_on_colher_mouse_entered"]
+[connection signal="mouse_exited" from="Itens/colher" to="." method="_on_colher_mouse_exited"]
+[connection signal="mouse_entered" from="Itens/carimbador" to="Itens/carimbador" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Itens/carimbador" to="." method="_on_carimbador_mouse_exited"]

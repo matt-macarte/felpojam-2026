@@ -42,7 +42,6 @@ func desativar_interacoes() -> void:
 func _on_area_mesa_mouse_entered() -> void:
 	area_mesa.modulate = Color(1,1,1,0.2)
 	mouse_dentro_mesa = true
-	print("entrou")
 func _on_area_mesa_mouse_exited() -> void:
 	area_mesa.modulate = Color(1,1,1,0)
 	mouse_dentro_mesa = false
