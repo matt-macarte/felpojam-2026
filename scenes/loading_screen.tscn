@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://ds1hsoavysxpp"]
+
+[ext_resource type="Script" uid="uid://calb71th7c2u7" path="res://scripts/loading_screen.gd" id="1_rerct"]
+[ext_resource type="Texture2D" uid="uid://cy0pags0ysiil" path="res://assets/sprites/start_background.jpeg" id="2_hprjd"]
+
+[sub_resource type="Animation" id="Animation_kg4ax"]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Purple:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_5phy8"]
+resource_name = "nada"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_rerct"]
+resource_name = "transition"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Black:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.083333336, 0.16666667, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Purple:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f0i4t"]
+_data = {
+&"RESET": SubResource("Animation_kg4ax"),
+&"nada": SubResource("Animation_5phy8"),
+&"transition": SubResource("Animation_rerct")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1786k"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hprjd"]
+texture = ExtResource("2_hprjd")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hprjd"]
+bg_color = Color(0.14238001, 0.033600006, 0.21, 1)
+
+[node name="Loading_Screen" type="CanvasLayer" unique_id=241530640 node_paths=PackedStringArray("animation_player")]
+layer = 13
+script = ExtResource("1_rerct")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=184362807]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_f0i4t")
+autoplay = &"transition"
+
+[node name="Black" type="Panel" parent="." unique_id=461365186]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = -1242.2478
+offset_bottom = -681.73785
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(32.27494, 18.843699)
+theme_override_styles/panel = SubResource("StyleBoxFlat_1786k")
+
+[node name="Light" type="Panel" parent="." unique_id=1532425227]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hprjd")
+
+[node name="Purple" type="Panel" parent="." unique_id=731425506]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1240.1858
+offset_bottom = -681.47253
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(32.27494, 18.843699)
+theme_override_styles/panel = SubResource("StyleBoxFlat_hprjd")

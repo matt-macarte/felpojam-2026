@@ -1,3 +1,47 @@
 [gd_scene format=3 uid="uid://bbob7s6kgjoxa"]
 
+[ext_resource type="Texture2D" uid="uid://dqq0bqlkw02ax" path="res://assets/sprites/cartas/carta_branca_01.png" id="1_grw2m"]
+[ext_resource type="Theme" uid="uid://bsmqxaw2jc0um" path="res://assets/resources/letter_theme.tres" id="2_j6rum"]
+[ext_resource type="Texture2D" uid="uid://dapvn2opnaibq" path="res://assets/sprites/cartas/carta_branca_03.png" id="3_nff2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rpug"]
+size = Vector2(665.7237, 465.18845)
+
 [node name="Cartas" type="Node2D" unique_id=1830612570]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=508266053]
+
+[node name="CartaBranca01" type="Sprite2D" parent="Area2D" unique_id=554430818]
+position = Vector2(624, 350)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_grw2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=187659070]
+position = Vector2(650, 362.00003)
+rotation = -0.12281123
+scale = Vector2(0.7451299, -1.257931)
+shape = SubResource("RectangleShape2D_4rpug")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=513042217]
+offset_left = 419.99997
+offset_top = 140.0
+offset_right = 820.0
+offset_bottom = 640.0
+rotation = -0.13419579
+theme = ExtResource("2_j6rum")
+text = "Alou,
+
+	Top textos de teste já feitos.
+	Gosto muito, amo todosa,
+	bla bla bla testando texto testado gigante fgravmge 1 12 asopjigros aka lso
+
+vjos
+nodjikhue jalskd
+
+obns kjhsdfik;lAS
+se precidar"
+
+[node name="CartaBranca03" type="Sprite2D" parent="." unique_id=963270437]
+visible = false
+position = Vector2(705, 295)
+texture = ExtResource("3_nff2f")

@@ -1,0 +1,76 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "default",
+&"description": "",
+&"display_name": "LAURA",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"default": {
+"export_overrides": {
+"image": "\"res://assets/sprites/portraits/portrait_laura_01.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"happy": {
+"export_overrides": {
+"image": "\"res://assets/sprites/portraits/portrait_laura_02.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"super_happy": {
+"export_overrides": {
+"image": "\"res://assets/sprites/portraits/portrait_laura_03.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"sweating": {
+"export_overrides": {
+"image": "\"res://assets/sprites/portraits/portrait_laura_05.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"thinking": {
+"export_overrides": {
+"image": "\"res://assets/sprites/portraits/portrait_laura_04.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}
