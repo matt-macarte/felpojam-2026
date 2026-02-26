@@ -84,23 +84,23 @@ texture = ExtResource("1_fbqnr")
 centered = false
 
 [node name="Carimbador01" type="Sprite2D" parent="Img" unique_id=494213517]
-position = Vector2(264.99997, 554.00006)
+position = Vector2(288.99997, 518)
 rotation = -0.056007177
 scale = Vector2(0.24287748, 0.24287748)
 texture = ExtResource("2_f4fkh")
 
 [node name="CeraVermelha" type="Sprite2D" parent="Img" unique_id=1281097795]
-position = Vector2(692, 432)
+position = Vector2(267.00003, 661)
 scale = Vector2(0.32326353, 0.32326353)
 texture = ExtResource("3_qd43g")
 
 [node name="EsquentaCera01" type="Sprite2D" parent="Img" unique_id=574715494]
-position = Vector2(452.99997, 405)
+position = Vector2(284.99997, 423)
 scale = Vector2(0.21897115, 0.21897115)
 texture = ExtResource("4_57ouo")
 
 [node name="ColherVazia" type="Sprite2D" parent="Img" unique_id=1279883884]
-position = Vector2(578, 441)
+position = Vector2(277, 586)
 scale = Vector2(0.2766731, 0.2766731)
 texture = ExtResource("5_r73rw")
 
