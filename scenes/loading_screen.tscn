@@ -114,7 +114,6 @@ animation_player = NodePath("AnimationPlayer")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=184362807]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_f0i4t")
-autoplay = &"transition"
 
 [node name="Black" type="Panel" parent="." unique_id=461365186]
 unique_name_in_owner = true

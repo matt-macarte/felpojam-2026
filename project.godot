@@ -24,7 +24,10 @@ buses/default_bus_layout="uid://b4rb6cng2fk01"
 Dialogic="*uid://ds2q0uclmolvu"
 SceneLoader="*uid://bptenmtm05koi"
 AreaEffects="*uid://dlvk6xp4duepj"
-Constants="*uid://eqh3nx5kd48v"
+Global="*uid://eqh3nx5kd48v"
+PlayerStates="*uid://dlvk6xp4duepj"
+SoundManager="*uid://dpqb1gbabdb71"
+TextosCartas="*uid://ffreiryxfvft"
 
 [dialogic]
 
@@ -97,6 +100,10 @@ folder_colors={
 "res://scripts/": "yellow"
 }
 
+[gui]
+
+theme/default_font_antialiasing=2
+
 [input]
 
 dialogic_default_action={
@@ -116,6 +123,16 @@ interact={
 cancel={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+switch={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+interact2={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
 

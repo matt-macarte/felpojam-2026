@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c4aafp744uhnm"]
+
+[ext_resource type="Script" uid="uid://oieabrd71hal" path="res://scripts/zoom_mesa.gd" id="1_tosoa"]
+[ext_resource type="Texture2D" uid="uid://dp7e8xv7vpcev" path="res://assets/sprites/back_mesa_carta.png" id="2_d1pff"]
+[ext_resource type="PackedScene" uid="uid://43v36aqwair4" path="res://scenes/carimbo.tscn" id="3_8ehb7"]
+[ext_resource type="PackedScene" uid="uid://05djjj5spt7g" path="res://scenes/carimbo_cera.tscn" id="4_bru42"]
+
+[sub_resource type="Animation" id="Animation_psngt"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8d5tt"]
+resource_name = "entrar"
+length = 2.0
+
+[sub_resource type="Animation" id="Animation_n7i0p"]
+resource_name = "sem"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8d5tt"]
+_data = {
+&"RESET": SubResource("Animation_psngt"),
+&"entrar": SubResource("Animation_8d5tt"),
+&"sem": SubResource("Animation_n7i0p")
+}
+
+[node name="Mesa" type="Node2D" unique_id=1970445107 node_paths=PackedStringArray("animation_player")]
+script = ExtResource("1_tosoa")
+animation_player = NodePath("AnimationPlayer")
+metadata/_edit_horizontal_guides_ = [1440.0, 720.0]
+metadata/_edit_vertical_guides_ = [1280.0]
+
+[node name="BackMesaCarta" type="Sprite2D" parent="." unique_id=1680949444]
+show_behind_parent = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_d1pff")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1891557525]
+libraries/ = SubResource("AnimationLibrary_8d5tt")
+autoplay = &"entrar"
+
+[node name="Carimbo" parent="." unique_id=566623697 instance=ExtResource("3_8ehb7")]
+
+[node name="Carimbo2" parent="." unique_id=1321065416 instance=ExtResource("3_8ehb7")]
+position = Vector2(710, 4)
+
+[node name="Carimbo3" parent="." unique_id=1245727181 instance=ExtResource("3_8ehb7")]
+position = Vector2(1038, 159)
+
+[node name="CarimboCera" parent="." unique_id=410488399 instance=ExtResource("4_bru42")]
+position = Vector2(383, 351)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

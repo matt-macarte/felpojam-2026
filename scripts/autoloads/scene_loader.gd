@@ -13,6 +13,7 @@ func _ready() -> void:
 	set_process(false)
 
 func load_scene(_scene_path: String) -> void:
+	
 	scene_path = _scene_path
 	
 	var new_load_screen = loading_screen.instantiate()
@@ -38,5 +39,6 @@ func _process(_delta: float) -> void:
 			set_process(false)
 		ResourceLoader.THREAD_LOAD_LOADED:
 			loaded_resource = ResourceLoader.load_threaded_get(scene_path)
+			#GameTracker.cena_atual = loaded_resource
 			get_tree().change_scene_to_packed(loaded_resource)
 			load_finished.emit()

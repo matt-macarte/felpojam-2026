@@ -6,6 +6,7 @@ var audio_bus_id
 
 func _ready() -> void:
 	audio_bus_id = AudioServer.get_bus_index(audioBusName)
+	value = audio_bus_id
 
 func _on_value_changed(_value: float) -> void:
 	var db = linear_to_db(_value)

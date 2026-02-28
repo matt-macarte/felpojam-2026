@@ -3,15 +3,13 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var mouse_dentro := false
 
-func _ready() -> void:
-	pass
-
-func _process(_delta: float) -> void:
-	mudar_sprite()
-
+func _input(event: InputEvent) -> void:
+	
+	if event.is_action_pressed("interact"):
+		mudar_sprite()
 
 func mudar_sprite() -> void:
-	if Input.is_action_just_pressed("interact") and mouse_dentro:
+	if mouse_dentro:
 		print("clicou")
 		match animated_sprite_2d.animation:
 			"default":
@@ -29,15 +27,11 @@ func mudar_sprite() -> void:
 
 func pop_on_mouse_entered(mouse:bool) -> void:
 	if mouse:
-		self.scale = Vector2(0.7,0.7)
+		self.scale *= 1.2
 	elif not mouse:
-		self.scale *= Vector2(0.5,0.5)
+		self.scale /= 1.2
 
 func _on_mouse_entered() -> void:
 	mouse_dentro = true
-	self.scale *= 1.2
-
-
 func _on_mouse_exited() -> void:
 	mouse_dentro = false
-	self.scale /= 1.2

@@ -11,6 +11,8 @@ extends Control
 
 @onready var back_light_animation: AnimationPlayer = %AnimationPlayer
 
+signal start
+
 # luz pulsando de fundo
 @export var pulse :bool = true
 
@@ -24,6 +26,7 @@ var tchau := false
 var falou := false
 
 func _ready() -> void:
+	
 	options.visible = true
 	settings.visible = false
 	sobre.visible = false
@@ -75,5 +78,6 @@ func _on_return_pressed() -> void:
 	_ready()
 
 func _on_new_game_pressed() -> void:
-	Constants.variaveis.cena = "purple"
-	SceneLoader.load_scene(cena_inicial)
+	Global._on_game_start()
+	Global.transition_style = "purple"
+	SceneLoader.load_scene(Global.trampo["uid"])

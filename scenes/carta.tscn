@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://kmlh6wag0f12"]
+
+[ext_resource type="Script" uid="uid://fbmxak15efu8" path="res://scripts/classes/carta.gd" id="1_cc48w"]
+[ext_resource type="Texture2D" uid="uid://dqq0bqlkw02ax" path="res://assets/sprites/cartas/carta_branca_01.png" id="1_rx7pn"]
+[ext_resource type="Texture2D" uid="uid://cqlml3v5yl8f" path="res://assets/sprites/cartas/carta_branca_lisa_2.png" id="2_3p8e2"]
+[ext_resource type="Texture2D" uid="uid://cuj26p50bwb8c" path="res://assets/sprites/cartas/carta_branca_lisa_3.png" id="3_cc48w"]
+[ext_resource type="Theme" uid="uid://bsmqxaw2jc0um" path="res://assets/resources/letter_theme.tres" id="4_3p8e2"]
+[ext_resource type="Script" uid="uid://1ji2mi1pgus8" path="res://scripts/classes/grab.gd" id="6_txgwi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txgwi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rx7pn")
+}],
+"loop": true,
+"name": &"aberta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3p8e2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cc48w")
+}],
+"loop": true,
+"name": &"selada",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p8e2"]
+size = Vector2(1301.6053, 606.1814)
+
+[node name="Carta" type="Node2D" unique_id=1141059468 node_paths=PackedStringArray("sprite", "conteudo")]
+script = ExtResource("1_cc48w")
+sprite = NodePath("AnimatedSprite2D")
+conteudo = NodePath("CartaContent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=386843733]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_txgwi")
+animation = &"aberta"
+
+[node name="CartaContent" type="RichTextLabel" parent="." unique_id=891501719]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.000015
+offset_top = -195.00002
+offset_right = 173.99998
+offset_bottom = 204.99998
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.13419579
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("4_3p8e2")
+text = "Alou,
+
+	Top textos de teste já feitos.
+	Gosto muito, amo todosa,
+	bla bla bla testando texto testado gigante fgravmge 1 12 asopjigros aka lso
+
+vjos
+nodjikhue jalskd
+
+obns kjhsdfik;lAS
+se precidar"
+
+[node name="Grab_box" type="Area2D" parent="." unique_id=437141604]
+unique_name_in_owner = true
+position = Vector2(5.000004, 30.000002)
+rotation = -0.41808075
+scale = Vector2(0.29838198, 0.4000211)
+
+[node name="carta_fechada_box" type="CollisionShape2D" parent="Grab_box" unique_id=769798803]
+position = Vector2(-3.0627594, -1.0149536)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_3p8e2")
+
+[node name="Grab" type="Node" parent="." unique_id=1907598920 node_paths=PackedStringArray("node2d", "grab_box")]
+script = ExtResource("6_txgwi")
+node2d = NodePath("..")
+grab_box = NodePath("../Grab_box")
+metadata/_custom_type_script = "uid://1ji2mi1pgus8"

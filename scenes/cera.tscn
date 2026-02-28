@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d1bwtrlv1dmco"]
+
+[ext_resource type="Texture2D" uid="uid://80l0i3bcrsre" path="res://assets/sprites/cera_vermelha.png" id="1_fjlj5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ral6"]
+radius = 89.60298
+height = 243.69897
+
+[node name="Cera" type="Node2D" unique_id=328051405]
+
+[node name="cera" type="Area2D" parent="." unique_id=352510467]
+unique_name_in_owner = true
+scale = Vector2(0.7, 0.7)
+
+[node name="CeraVermelha" type="Sprite2D" parent="cera" unique_id=365998605]
+texture = ExtResource("1_fjlj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cera" unique_id=1522055291]
+position = Vector2(-1.4849904, -13.364913)
+rotation = 1.5682877
+shape = SubResource("CapsuleShape2D_3ral6")

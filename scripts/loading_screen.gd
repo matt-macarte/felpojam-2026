@@ -2,20 +2,17 @@ extends CanvasLayer
 
 signal loading_screen_ready
 
-
-
-
 @export var animation_player: AnimationPlayer
 
 @onready var black: Panel = %Black
 @onready var light: Panel = %Light
 @onready var purple: Panel = %Purple
 
-var usar: String = Constants.variaveis.cena
+var usar: String = Global.transition_style
 
 func _ready() -> void:
 	wich_animation()
-	
+	animation_player.play("transition")
 	await animation_player.animation_finished
 	loading_screen_ready.emit()
 	

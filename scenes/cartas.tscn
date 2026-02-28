@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bbob7s6kgjoxa"]
+[gd_scene format=3 uid="uid://dif3dyoc5ta47"]
 
 [ext_resource type="Texture2D" uid="uid://dqq0bqlkw02ax" path="res://assets/sprites/cartas/carta_branca_01.png" id="1_grw2m"]
 [ext_resource type="Theme" uid="uid://bsmqxaw2jc0um" path="res://assets/resources/letter_theme.tres" id="2_j6rum"]

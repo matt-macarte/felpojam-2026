@@ -22,11 +22,13 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and mover_item != "limpar":
 		print("clicou: ", mover_item)
+		#var tween:Tween = create_tween()
+		#tween.tween_property(item[mover_item],"position",p_mouse,1)
 		#item[mover_item].position = get_global_mouse_position()
 
 func _process(_delta: float) -> void:
 	p_mouse = get_global_mouse_position()
-	print(mover_item)
+	#print(mover_item)
 
 
 func _on_carta_mouse_entered() -> void:
@@ -47,7 +49,7 @@ func _on_colher_mouse_exited() -> void:
 	mover_item = "limpar"
 
 
-func _on_carimbador_mouse_shape_entered(shape_idx: int) -> void:
+func _on_carimbador_mouse_entered() -> void:
 	mover_item = "carimbador"
 func _on_carimbador_mouse_exited() -> void:
 	mover_item = "limpar"

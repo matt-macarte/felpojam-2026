@@ -1,61 +1,61 @@
 [gd_scene format=3 uid="uid://c737ql4in1ow7"]
 
 [ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="1_hdmo1"]
-[ext_resource type="Texture2D" uid="uid://bvrnpkl6n5otd" path="res://assets/fundo_menu.png" id="1_p81d2"]
+[ext_resource type="Texture2D" uid="uid://bvrnpkl6n5otd" path="res://assets/sprites/fundo_menu.png" id="1_p81d2"]
+[ext_resource type="Script" uid="uid://bq1wunrsqn4en" path="res://scripts/pause_menu.gd" id="1_v4r4p"]
 [ext_resource type="StyleBox" uid="uid://bpbdue6akb0tm" path="res://styles/button_hover.tres" id="3_2nc7s"]
+[ext_resource type="FontFile" uid="uid://dc3civy03261s" path="res://assets/fonts/The Muppet Font/The Muppet Font.otf" id="3_71k7c"]
+[ext_resource type="Script" uid="uid://nt221enavft7" path="res://scripts/fullscreen.gd" id="3_knqa7"]
 [ext_resource type="StyleBox" uid="uid://dvxu83tgrbgy0" path="res://styles/button_normal.tres" id="3_p81d2"]
 [ext_resource type="StyleBox" uid="uid://np024le3wwnk" path="res://styles/button_pressed.tres" id="4_2nc7s"]
+[ext_resource type="Script" uid="uid://oe5euhx4loc6" path="res://scripts/audio_control.gd" id="4_71k7c"]
 
 [sub_resource type="Theme" id="Theme_nwcfo"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nc7s"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+bg_color = Color(0.19800001, 0.36226672, 0.55, 0.45882353)
 
 [sub_resource type="Theme" id="Theme_d3xb4"]
 
 [node name="Pause_menu" type="Control" unique_id=1248953011]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme = SubResource("Theme_nwcfo")
+script = ExtResource("1_v4r4p")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=506350938]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="FundoMenu" type="Sprite2D" parent="." unique_id=736460562]
-position = Vector2(640, 360)
-texture = ExtResource("1_p81d2")
-
-[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=1532661409]
+[node name="Panel" type="Panel" parent="." unique_id=1093734692]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -206.0
-offset_top = -193.0
-offset_right = 206.0
-offset_bottom = 227.0
+offset_left = -23.001743
+offset_top = -25.558498
+offset_right = 1896.9983
+offset_bottom = 2054.4414
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2nc7s")
+scale = Vector2(27.476, 15.455)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7l7mv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2" unique_id=254783736]
-layout_mode = 2
+[node name="FundoMenu" type="Sprite2D" parent="." unique_id=736460562]
+position = Vector2(640, 360)
+texture = ExtResource("1_p81d2")
+
+[node name="buttons" type="VBoxContainer" parent="FundoMenu" unique_id=254783736]
+unique_name_in_owner = true
+offset_left = -171.61499
+offset_top = -210.0
+offset_right = 171.61502
+offset_bottom = 210.0
 theme_override_constants/separation = 45
 
-[node name="continuar" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=251004079]
+[node name="resume" type="Button" parent="FundoMenu/buttons" unique_id=251004079]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("1_hdmo1")
@@ -65,18 +65,8 @@ theme_override_styles/pressed = ExtResource("4_2nc7s")
 theme_override_styles/hover = ExtResource("3_2nc7s")
 text = "CONTINUAR"
 
-[node name="reiniciar" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=985324170]
-layout_mode = 2
-theme = SubResource("Theme_d3xb4")
-theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("1_hdmo1")
-theme_override_font_sizes/font_size = 28
-theme_override_styles/normal = ExtResource("3_p81d2")
-theme_override_styles/pressed = ExtResource("4_2nc7s")
-theme_override_styles/hover = ExtResource("3_2nc7s")
-text = "REINICIAR"
-
-[node name="opções" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=1502132183]
+[node name="settings" type="Button" parent="FundoMenu/buttons" unique_id=1502132183]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("1_hdmo1")
@@ -86,7 +76,8 @@ theme_override_styles/pressed = ExtResource("4_2nc7s")
 theme_override_styles/hover = ExtResource("3_2nc7s")
 text = "OPÇÕES"
 
-[node name="voltar_ao_menu" type="Button" parent="PanelContainer2/VBoxContainer" unique_id=1717649457]
+[node name="quit" type="Button" parent="FundoMenu/buttons" unique_id=1717649457]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("1_hdmo1")
@@ -96,4 +87,131 @@ theme_override_styles/pressed = ExtResource("4_2nc7s")
 theme_override_styles/hover = ExtResource("3_2nc7s")
 text = "VOLTAR AO MENU"
 
+[node name="sair" type="Button" parent="FundoMenu/buttons" unique_id=985324170]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_d3xb4")
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_p81d2")
+theme_override_styles/pressed = ExtResource("4_2nc7s")
+theme_override_styles/hover = ExtResource("3_2nc7s")
+text = "SAIR DO JOGO"
+
+[node name="Settings" type="VBoxContainer" parent="FundoMenu" unique_id=2140328857]
+unique_name_in_owner = true
+visible = false
+top_level = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -192.0
+offset_right = 150.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_constants/separation = 31
+
+[node name="CheckPulse" type="CheckButton" parent="FundoMenu/Settings" unique_id=575543698]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_71k7c")
+theme_override_font_sizes/font_size = 30
+button_pressed = true
+text = "Efeito de fundo"
+
+[node name="Fullscreen" type="CheckButton" parent="FundoMenu/Settings" unique_id=2114396922]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_71k7c")
+theme_override_font_sizes/font_size = 30
+text = "Tela Cheia"
+script = ExtResource("3_knqa7")
+
+[node name="Master" type="HBoxContainer" parent="FundoMenu/Settings" unique_id=581696681]
+layout_mode = 2
+
+[node name="Master" type="Label" parent="FundoMenu/Settings/Master" unique_id=2086737313]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.66
+theme_override_fonts/font = ExtResource("3_71k7c")
+theme_override_font_sizes/font_size = 30
+text = "Volume geral"
+horizontal_alignment = 1
+
+[node name="AudioControl" type="HSlider" parent="FundoMenu/Settings/Master" unique_id=128283118]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("4_71k7c")
+audioBusName = "Master"
+
+[node name="Musica" type="HBoxContainer" parent="FundoMenu/Settings" unique_id=1160914765]
+layout_mode = 2
+
+[node name="Music" type="Label" parent="FundoMenu/Settings/Musica" unique_id=191394194]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.66
+theme_override_fonts/font = ExtResource("3_71k7c")
+theme_override_font_sizes/font_size = 30
+text = "Musga"
+horizontal_alignment = 1
+
+[node name="AudioControl" type="HSlider" parent="FundoMenu/Settings/Musica" unique_id=46605771]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("4_71k7c")
+audioBusName = "Music"
+
+[node name="SFX" type="HBoxContainer" parent="FundoMenu/Settings" unique_id=176923216]
+layout_mode = 2
+
+[node name="SFX" type="Label" parent="FundoMenu/Settings/SFX" unique_id=1270067331]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_fonts/font = ExtResource("3_71k7c")
+theme_override_font_sizes/font_size = 30
+text = "Efeitos sonoros"
+horizontal_alignment = 1
+
+[node name="AudioControl" type="HSlider" parent="FundoMenu/Settings/SFX" unique_id=436269772]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+script = ExtResource("4_71k7c")
+audioBusName = "SFX"
+
+[node name="return" type="Button" parent="FundoMenu/Settings" unique_id=1632615768]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_hdmo1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = ExtResource("3_p81d2")
+theme_override_styles/pressed = ExtResource("4_2nc7s")
+theme_override_styles/hover = ExtResource("3_2nc7s")
+text = "VOLTAR"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=456588791]
+
+[connection signal="pressed" from="FundoMenu/buttons/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="FundoMenu/buttons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="FundoMenu/buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="FundoMenu/buttons/sair" to="." method="_on_reset_pressed"]
+[connection signal="toggled" from="FundoMenu/Settings/Fullscreen" to="FundoMenu/Settings/Fullscreen" method="_on_toggled"]
+[connection signal="value_changed" from="FundoMenu/Settings/Master/AudioControl" to="FundoMenu/Settings/Master/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="FundoMenu/Settings/Musica/AudioControl" to="FundoMenu/Settings/Musica/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="FundoMenu/Settings/SFX/AudioControl" to="FundoMenu/Settings/SFX/AudioControl" method="_on_value_changed"]
+[connection signal="pressed" from="FundoMenu/Settings/return" to="." method="_on_return_pressed"]

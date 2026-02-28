@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://43v36aqwair4"]
+
+[ext_resource type="Texture2D" uid="uid://cuyo2gvsqiku5" path="res://assets/sprites/carimbos/carimbo_aversao.png" id="1_516qg"]
+[ext_resource type="Script" uid="uid://1ji2mi1pgus8" path="res://scripts/classes/grab.gd" id="2_kxde8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxde8"]
+radius = 67.647026
+height = 312.12128
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjrsu"]
+size = Vector2(358.875, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_516qg"]
+size = Vector2(373, 144)
+
+[node name="Carimbo" type="Node2D" unique_id=566623697]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=509824159]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_516qg")
+
+[node name="GrabBox" type="Area2D" parent="." unique_id=776253889]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabBox" unique_id=1573955790]
+position = Vector2(2, -77)
+scale = Vector2(1.3600007, 1.3199997)
+shape = SubResource("CapsuleShape2D_kxde8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GrabBox" unique_id=1698213751]
+position = Vector2(-0.4375, 157)
+shape = SubResource("RectangleShape2D_kjrsu")
+
+[node name="CarimbarBox" type="Area2D" parent="." unique_id=769891153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarimbarBox" unique_id=734923060]
+position = Vector2(0.5, 152)
+shape = SubResource("RectangleShape2D_516qg")
+
+[node name="Grab" type="Node" parent="." unique_id=1975074411 node_paths=PackedStringArray("node2d", "grab_box")]
+script = ExtResource("2_kxde8")
+node2d = NodePath("..")
+grab_box = NodePath("../GrabBox")
+metadata/_custom_type_script = "uid://1ji2mi1pgus8"

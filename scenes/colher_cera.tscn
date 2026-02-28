@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b3ajdvigc68g4"]
+
+[ext_resource type="Texture2D" uid="uid://bkhbq5o6l4jd4" path="res://assets/sprites/colher_derretido.png" id="1_4qqvl"]
+[ext_resource type="Texture2D" uid="uid://flb65uo7k17v" path="res://assets/sprites/colher_solidos.png" id="2_yvisf"]
+[ext_resource type="Texture2D" uid="uid://by2ppq1jg3gwn" path="res://assets/sprites/colher_vazia.png" id="3_6ewwk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_elcw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4qqvl")
+}],
+"loop": true,
+"name": &"derretida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yvisf")
+}],
+"loop": true,
+"name": &"solida",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6ewwk")
+}],
+"loop": true,
+"name": &"vazia",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ikdms"]
+radius = 88.26117
+height = 436.66064
+
+[node name="ColherCera" type="Node2D" unique_id=1556147193]
+
+[node name="colher" type="Area2D" parent="." unique_id=1925772395]
+unique_name_in_owner = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="colher" unique_id=161949507]
+position = Vector2(-0.10043335, 0.2480774)
+scale = Vector2(0.6458105, 0.6458105)
+sprite_frames = SubResource("SpriteFrames_elcw1")
+animation = &"vazia"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colher" unique_id=1042666054]
+position = Vector2(-0.10043346, 0.24804497)
+rotation = 1.4805307
+scale = Vector2(0.3501622, 0.8612113)
+shape = SubResource("CapsuleShape2D_ikdms")

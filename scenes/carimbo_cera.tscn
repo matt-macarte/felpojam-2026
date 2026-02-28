@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://05djjj5spt7g"]
+
+[ext_resource type="Script" uid="uid://dv1kr8y21hrn4" path="res://scripts/classes/carimbador.gd" id="1_ix3g8"]
+[ext_resource type="Texture2D" uid="uid://dluo1gjqk3ash" path="res://assets/sprites/carimbador_02.png" id="2_al43o"]
+[ext_resource type="Texture2D" uid="uid://dmls4wxqtnxba" path="res://assets/sprites/carimbador_01.png" id="3_j27ui"]
+[ext_resource type="Script" uid="uid://1ji2mi1pgus8" path="res://scripts/classes/grab.gd" id="4_al43o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w831w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_al43o")
+}],
+"loop": true,
+"name": &"carimbar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j27ui")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mm2mi"]
+radius = 4.3351746
+height = 33.318195
+
+[node name="CarimboCera" type="Node2D" unique_id=410488399]
+
+[node name="carimbador" type="Area2D" parent="." unique_id=541733721]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ix3g8")
+
+[node name="CarimbadorImg" type="AnimatedSprite2D" parent="carimbador" unique_id=977487658]
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_w831w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carimbador" unique_id=344710963]
+position = Vector2(6.8213863, -22.17004)
+rotation = 1.2490927
+scale = Vector2(17.416225, 17.416225)
+shape = SubResource("CapsuleShape2D_mm2mi")
+
+[node name="Grab" type="Node" parent="." unique_id=1044003245 node_paths=PackedStringArray("node2d", "grab_box")]
+script = ExtResource("4_al43o")
+node2d = NodePath("..")
+grab_box = NodePath("../carimbador")
+metadata/_custom_type_script = "uid://1ji2mi1pgus8"
+
+[connection signal="mouse_entered" from="carimbador" to="carimbador" method="_on_mouse_entered"]
