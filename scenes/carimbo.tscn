@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://43v36aqwair4"]
 
-[ext_resource type="Script" uid="uid://djumsvv3oc00h" path="res://scripts/carimbo.gd" id="1_7k5kb"]
+[ext_resource type="Script" uid="uid://djumsvv3oc00h" path="res://scripts/classes/carimbo.gd" id="1_7k5kb"]
 [ext_resource type="Texture2D" uid="uid://cuyo2gvsqiku5" path="res://assets/sprites/carimbos/carimbo_aversao.png" id="1_516qg"]
 [ext_resource type="Script" uid="uid://1ji2mi1pgus8" path="res://scripts/classes/grab.gd" id="2_kxde8"]
 [ext_resource type="Texture2D" uid="uid://bldg31hpxnnup" path="res://assets/sprites/carimbos/carimbo_desalento.png" id="3_6y74a"]
 [ext_resource type="Texture2D" uid="uid://cqv6em3fow1lc" path="res://assets/sprites/carimbos/carimbo_desejo.png" id="4_n7xgr"]
 [ext_resource type="Texture2D" uid="uid://g0qcd8dvxyr2" path="res://assets/sprites/carimbos/carimbo_esperanca.png" id="5_7rlow"]
-[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/pop_on_mouse.gd" id="7_n7xgr"]
+[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/classes/pop_on_mouse.gd" id="7_n7xgr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_efxv0"]
 animations = [{
@@ -53,10 +53,11 @@ size = Vector2(358.875, 136)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_516qg"]
 size = Vector2(373, 144)
 
-[node name="Carimbo" type="Node2D" unique_id=2086801114 node_paths=PackedStringArray("sprite", "carimbar_box")]
+[node name="Carimbo" type="Node2D" unique_id=2086801114 node_paths=PackedStringArray("sprite", "carimbar_box", "grab")]
 script = ExtResource("1_7k5kb")
 sprite = NodePath("CarimboS")
 carimbar_box = NodePath("CarimbarBox")
+grab = NodePath("Grab")
 metadata/_custom_type_script = "uid://djumsvv3oc00h"
 
 [node name="CarimboS" type="AnimatedSprite2D" parent="." unique_id=1691708566]

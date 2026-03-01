@@ -12,6 +12,8 @@ var interactable_obj:Node2D
 var sfx_path: = preload("uid://d2m37wxn4p338")
 var sfx:AudioStreamPlayer = AudioStreamPlayer.new()
 
+signal pegou_item
+signal largou_item
 
 func _ready() -> void:
 	sfx.bus = "SFX"
@@ -35,9 +37,11 @@ func _input(event: InputEvent) -> void:
 		if pegou == false and PlayerStates.segurando == false:
 			pegou = true
 			sfx.play()
+			pegou_item.emit()
 			PlayerStates.segurando = true
 		elif pegou == true:
 			pegou = false
+			largou_item.emit()
 			PlayerStates.segurando = false
 
 

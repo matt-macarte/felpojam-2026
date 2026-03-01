@@ -84,10 +84,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Carta" type="Node2D" unique_id=1141059468 node_paths=PackedStringArray("conteudo", "sprite_carta", "carimbo_marca")]
+[node name="Carta" type="Node2D" unique_id=1141059468 node_paths=PackedStringArray("conteudo", "sprite_carta", "area", "carimbo_marca")]
 script = ExtResource("1_cc48w")
 conteudo = NodePath("CartaContent")
 sprite_carta = NodePath("SpriteCarta")
+area = NodePath("Grab_box")
 carimbo_marca = NodePath("CarimboPapel")
 
 [node name="SpriteCarta" type="AnimatedSprite2D" parent="." unique_id=386843733]

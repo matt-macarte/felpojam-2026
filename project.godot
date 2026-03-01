@@ -23,7 +23,6 @@ buses/default_bus_layout="uid://b4rb6cng2fk01"
 
 Dialogic="*uid://ds2q0uclmolvu"
 SceneLoader="*uid://bptenmtm05koi"
-AreaEffects="*uid://dlvk6xp4duepj"
 Global="*uid://eqh3nx5kd48v"
 PlayerStates="*uid://dlvk6xp4duepj"
 SoundManager="*uid://dpqb1gbabdb71"

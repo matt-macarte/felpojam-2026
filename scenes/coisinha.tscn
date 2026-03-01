@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ocppob6ugn25" path="res://assets/sprites/portraits/coisinha_04.png" id="3_xn6a1"]
 [ext_resource type="Texture2D" uid="uid://dp48skowjshwa" path="res://assets/sprites/portraits/coisinha_01.png" id="4_syt4a"]
 [ext_resource type="Texture2D" uid="uid://b7mnhiqa7v73f" path="res://assets/sprites/portraits/coisinha_02.png" id="5_dlrv4"]
-[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/pop_on_mouse.gd" id="6_t2xso"]
+[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/classes/pop_on_mouse.gd" id="6_t2xso"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whhnq"]
 animations = [{
