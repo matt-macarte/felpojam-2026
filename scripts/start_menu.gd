@@ -33,7 +33,7 @@ func _ready() -> void:
 		resume.visible = false
 	else:
 		resume.visible = true
-		
+
 
 
 func _process(_delta: float) -> void:
@@ -45,8 +45,7 @@ func _process(_delta: float) -> void:
 		back_light_animation.current_animation = "light_animation" 
 	if Input.is_action_pressed("cancel"):
 		get_tree().quit()
-	
-	
+
 
 
 func _on_resume_pressed() -> void:
@@ -78,4 +77,4 @@ func _on_return_pressed() -> void:
 func _on_new_game_pressed() -> void:
 	Global._on_game_start()
 	Global.transition_style = "purple"
-	SceneLoader.load_scene(Global.trampo["uid"])
+	SceneLoader.load_scene(cena_inicial)

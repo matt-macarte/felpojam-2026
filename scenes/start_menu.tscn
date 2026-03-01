@@ -77,7 +77,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vpdu5")
-cena_inicial = &"uid://di4r6ivm6cuwi"
+cena_inicial = &"uid://dj0rrvxjam3o5"
 
 [node name="backLight" type="TextureRect" parent="." unique_id=159186181]
 unique_name_in_owner = true

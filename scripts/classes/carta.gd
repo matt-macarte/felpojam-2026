@@ -1,8 +1,6 @@
 extends Node2D
 class_name Carta
 
-@export var carimbo:Carimbo
-
 @export var conteudo:RichTextLabel
 @export var sprite_carta:AnimatedSprite2D
 @export var area:Area2D
@@ -17,18 +15,20 @@ signal state_change(state)
 var state:String = "fechada"
 var carimbo_visivel:bool
 var entrou:bool
+var pegou:bool
 
 func _ready() -> void:
 	conteudo.text = TextosCartas.carta_inicial
-	if carimbo:
-		carimbo.connect("carimbar", _on_carimbar)
+	conteudo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#if carimbo:
+		#carimbo.connect("carimbar", _on_carimbar)
 	area.connect("mouse_entered", _on_mouse_entered)
 	area.connect("mouse_exited", _on_mouse_exited)
 	connect("state_change", _on_stage_change)
 	_on_stage_change()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("interact2") and entrou == true:
+	if event.is_action_pressed("interact2") and entrou and !PlayerStates.segurando:
 		match state:
 			"aberta": 
 				state = "fechada"
@@ -53,12 +53,37 @@ func _on_stage_change() -> void:
 		conteudo.visible = false
 		carimbo_marca.visible = false
 
-func _on_carimbar(tipo: Variant, cposition: Variant) -> void:
-	print("carimbou")
-	sprite_carta.animation = tipo
-	sprite_carta.global_position = cposition
 
 func _on_mouse_entered() -> void:
 	entrou = true
 func _on_mouse_exited() -> void:
 	entrou = false
+
+func carimbar(tipo:String, posicao:Vector2) -> void:
+	print("carimbou")
+	if entrou:
+		carimbo_marca.animation = tipo
+		carimbo_marca.global_position = posicao
+
+func _on_carimbo_carimbar(tipo: Variant, posicao: Variant) -> void:
+	carimbar(tipo, posicao)
+
+
+func _on_carimbo_2_carimbar(tipo: Variant, posicao: Variant) -> void:
+	carimbar(tipo, posicao)
+
+
+func _on_carimbo_3_carimbar(tipo: Variant, posicao: Variant) -> void:
+	carimbar(tipo, posicao)
+
+
+func _on_carimbo_4_carimbar(tipo: Variant, posicao: Variant) -> void:
+	carimbar(tipo, posicao)
+
+
+func _on_grab_pegou_item() -> void:
+	pegou = true
+
+
+func _on_grab_largou_item() -> void:
+	pegou = false

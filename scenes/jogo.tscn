@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dj0rrvxjam3o5"]
+
+[ext_resource type="Script" uid="uid://kvavn2mt4eoq" path="res://scripts/jogo.gd" id="1_4sjka"]
+[ext_resource type="PackedScene" uid="uid://c4aafp744uhnm" path="res://scenes/mesa.tscn" id="2_ogo8m"]
+[ext_resource type="PackedScene" uid="uid://kmlh6wag0f12" path="res://scenes/carta.tscn" id="3_8i8hp"]
+[ext_resource type="Theme" uid="uid://du6bm5cxlkus5" path="res://assets/resources/button_theme.tres" id="3_qbbxf"]
+[ext_resource type="PackedScene" uid="uid://43v36aqwair4" path="res://scenes/carimbo.tscn" id="4_gsaar"]
+[ext_resource type="Script" uid="uid://b1l62og7alc52" path="res://scenes/button.gd" id="4_t8n7k"]
+[ext_resource type="PackedScene" uid="uid://di4r6ivm6cuwi" path="res://scenes/trampo.tscn" id="5_drirx"]
+[ext_resource type="PackedScene" uid="uid://dag8jedsdigyu" path="res://scenes/aquecedor_cera.tscn" id="6_drirx"]
+[ext_resource type="PackedScene" uid="uid://c737ql4in1ow7" path="res://scenes/pause_menu.tscn" id="6_qbbxf"]
+[ext_resource type="PackedScene" uid="uid://d1bwtrlv1dmco" path="res://scenes/cera.tscn" id="7_qbbxf"]
+[ext_resource type="PackedScene" uid="uid://b3ajdvigc68g4" path="res://scenes/colher_cera.tscn" id="8_t8n7k"]
+[ext_resource type="PackedScene" uid="uid://05djjj5spt7g" path="res://scenes/carimbo_cera.tscn" id="9_y6f35"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8n7k"]
+bg_color = Color(0.30980393, 0.30980393, 0.30980393, 0.5176471)
+
+[node name="Jogo" type="Node" unique_id=1734273148]
+script = ExtResource("1_4sjka")
+
+[node name="Trampo" parent="." unique_id=1024828134 instance=ExtResource("5_drirx")]
+unique_name_in_owner = true
+
+[node name="Button" type="Button" parent="Trampo" unique_id=1032706332]
+offset_left = 1075.0
+offset_top = 600.0
+offset_right = 1229.0
+offset_bottom = 662.0
+theme = ExtResource("3_qbbxf")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_t8n7k")
+text = "entregar"
+script = ExtResource("4_t8n7k")
+
+[node name="Mesa" parent="." unique_id=1970445107 instance=ExtResource("2_ogo8m")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Carta" parent="Mesa" unique_id=1141059468 instance=ExtResource("3_8i8hp")]
+position = Vector2(819, 425)
+
+[node name="Carimbo" parent="Mesa" unique_id=2086801114 node_paths=PackedStringArray("carta") instance=ExtResource("4_gsaar")]
+position = Vector2(517, 85)
+scale = Vector2(0.5, 0.5)
+carta = NodePath("../Carta")
+tipo = "aversao"
+
+[node name="Carimbo2" parent="Mesa" unique_id=1139418083 instance=ExtResource("4_gsaar")]
+position = Vector2(728, 84)
+scale = Vector2(0.5, 0.5)
+tipo = "desalento"
+
+[node name="Carimbo3" parent="Mesa" unique_id=2091646978 instance=ExtResource("4_gsaar")]
+position = Vector2(941, 83)
+scale = Vector2(0.5, 0.5)
+tipo = "esperanca"
+
+[node name="Carimbo4" parent="Mesa" unique_id=1204935961 instance=ExtResource("4_gsaar")]
+position = Vector2(1156, 83)
+scale = Vector2(0.5, 0.5)
+tipo = "desejo"
+
+[node name="AquecedorCera" parent="Mesa" unique_id=239967847 instance=ExtResource("6_drirx")]
+position = Vector2(200, 157)
+
+[node name="Cera" parent="Mesa" unique_id=328051405 instance=ExtResource("7_qbbxf")]
+position = Vector2(121, 585)
+
+[node name="ColherCera" parent="Mesa" unique_id=1556147193 instance=ExtResource("8_t8n7k")]
+position = Vector2(234, 425)
+
+[node name="CarimboCera" parent="Mesa" unique_id=410488399 instance=ExtResource("9_y6f35")]
+position = Vector2(381, 585)
+
+[node name="Pause_menu" parent="." unique_id=1248953011 instance=ExtResource("6_qbbxf")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="Trampo/Button" to="Trampo/Button" method="_on_pressed"]
+[connection signal="carimbar" from="Mesa/Carimbo" to="Mesa/Carta" method="_on_carimbo_carimbar"]
+[connection signal="carimbar" from="Mesa/Carimbo2" to="Mesa/Carta" method="_on_carimbo_2_carimbar"]
+[connection signal="carimbar" from="Mesa/Carimbo3" to="Mesa/Carta" method="_on_carimbo_3_carimbar"]
+[connection signal="carimbar" from="Mesa/Carimbo4" to="Mesa/Carta" method="_on_carimbo_4_carimbar"]

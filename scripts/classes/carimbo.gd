@@ -10,7 +10,7 @@ class_name Carimbo
 
 var pegou:bool
 
-signal carimbar(tipo,global_position)
+signal carimbar(tipo,posicao)
 
 func _ready() -> void:
 	grab.connect("pegou_item", _on_pegou_item)
@@ -19,8 +19,8 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact2") and pegou == true:
-		carimbar.emit()
-		print("clicou")
+		carimbar.emit(tipo, global_position)
+		print("clicou d")
 
 func definir_carimbo() -> void:
 	match tipo:

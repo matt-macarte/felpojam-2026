@@ -33,7 +33,8 @@ TextosCartas="*uid://ffreiryxfvft"
 directories/dch_directory={
 "desconhecido": "res://desconhecido.dch",
 "laura": "res://laura.dch",
-"lucimar": "res://lucimar.dch"
+"lucimar": "res://lucimar.dch",
+"otto": "res://otto.dch"
 }
 directories/dtl_directory={
 "timeline_inicial": "res://timeline_inicial.dtl"
@@ -77,6 +78,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+glossary/default_case_sensitive=true
 
 [display]
 

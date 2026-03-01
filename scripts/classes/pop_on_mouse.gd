@@ -3,7 +3,7 @@ class_name Pop
 
 @export var collision:Area2D
 @export var scale_to:float = 1.2
-@export var object:AnimatedSprite2D
+@export var object:Node2D
 
 var mouse:bool = false
 var scaled_size:Vector2 
@@ -15,7 +15,7 @@ func _ready() -> void:
 	collision.connect("mouse_entered", _on_mouse_entered)
 	collision.connect("mouse_exited", _on_mouse_exited)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if PlayerStates.segurando:
 		object.scale = scale_initial
 

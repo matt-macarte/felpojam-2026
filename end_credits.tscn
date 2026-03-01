@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://dkussqax7iqxx"]
+
+[ext_resource type="Texture2D" uid="uid://nhtnouleo2ct" path="res://assets/sprites/coisinha/coisinha_fim_01.png" id="1_3x28v"]
+[ext_resource type="Script" uid="uid://c68rp61e3s6di" path="res://scripts/end_credits.gd" id="1_jxj7d"]
+[ext_resource type="Texture2D" uid="uid://cfgk5x8jvfn02" path="res://assets/sprites/creditos.webp" id="1_x5toc"]
+[ext_resource type="Texture2D" uid="uid://ddkh3yl4o8wij" path="res://assets/sprites/coisinha/coisinha_fim_02.png" id="2_hc5c1"]
+[ext_resource type="Texture2D" uid="uid://dgodf37m1ipav" path="res://assets/sprites/coisinha/coisinha_fim_03.png" id="3_x5toc"]
+[ext_resource type="Texture2D" uid="uid://x6ech780nnh7" path="res://assets/sprites/coisinha/coisinha_fim_04.png" id="4_jxj7d"]
+[ext_resource type="Texture2D" uid="uid://67vdu5uy5x7v" path="res://assets/sprites/coisinha/coisinha_fim_05.png" id="5_sjsms"]
+[ext_resource type="Texture2D" uid="uid://btdokn8ke2fjb" path="res://assets/sprites/coisinha/coisinha_fim_06.png" id="6_631qd"]
+[ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="7_hc5c1"]
+
+[sub_resource type="Theme" id="Theme_jxj7d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjsms"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5jibw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3x28v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hc5c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x5toc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jxj7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sjsms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_631qd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5toc"]
+font = ExtResource("7_hc5c1")
+font_size = 60
+font_color = Color(0.21960784, 0, 0.28235295, 1)
+
+[sub_resource type="Animation" id="Animation_jxj7d"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Creditos:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(849, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Creditos:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1321, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_sjsms"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Creditos:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(849, -0.25, 0, 0.25, 0, 849, -0.8333334, 0, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Creditos:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1321, -0.25, 0, 0.25, 0, -579, -0.8333334, 316.6667, 0, 0),
+"times": PackedFloat32Array(0, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_631qd"]
+_data = {
+&"RESET": SubResource("Animation_jxj7d"),
+&"new_animation": SubResource("Animation_sjsms")
+}
+
+[node name="Ending" type="Node2D" unique_id=1109941746]
+script = ExtResource("1_jxj7d")
+
+[node name="Panel" type="Panel" parent="." unique_id=2051531323]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_jxj7d")
+theme_override_styles/panel = SubResource("StyleBoxFlat_sjsms")
+
+[node name="Creditos" type="Sprite2D" parent="." unique_id=261626902]
+position = Vector2(849, 1321)
+scale = Vector2(1.63, 1.63)
+texture = ExtResource("1_x5toc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1927645837]
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_5jibw")
+frame = 2
+frame_progress = 0.98190165
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=789526887]
+offset_left = 144.0
+offset_top = 37.0
+offset_right = 784.0
+offset_bottom = 137.0
+text = "OBRIGAD@ POR JOGAR!"
+label_settings = SubResource("LabelSettings_x5toc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1422860606]
+libraries/ = SubResource("AnimationLibrary_631qd")
+autoplay = &"new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

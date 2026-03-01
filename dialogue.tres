@@ -78,4 +78,4 @@ layer_info = {
 "16": SubResource("Resource_aui4g"),
 "17": SubResource("Resource_npsf5")
 }
-metadata/_latest_layer = "10"
+metadata/_latest_layer = ""

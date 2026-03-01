@@ -11,6 +11,7 @@ var sair = false
 func _ready() -> void:
 	animation_player.play_backwards("entrar")
 	animation_player.pause()
+	hide()
 
 
 func _input(event: InputEvent) -> void:

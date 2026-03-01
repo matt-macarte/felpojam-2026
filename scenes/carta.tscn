@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ebsx43ch02fv" path="res://assets/sprites/carimbos/carimbo_papel_desalento.png" id="8_j6sjy"]
 [ext_resource type="Texture2D" uid="uid://dpx6olj7euefx" path="res://assets/sprites/carimbos/carimbo_papel_desejo.png" id="9_t2c6e"]
 [ext_resource type="Texture2D" uid="uid://buvvf2068lgwg" path="res://assets/sprites/carimbos/carimbo_papel_esperanca.png" id="10_tmw1o"]
+[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/classes/pop_on_mouse.gd" id="11_j6sjy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_txgwi"]
 animations = [{
@@ -94,10 +95,9 @@ carimbo_marca = NodePath("CarimboPapel")
 [node name="SpriteCarta" type="AnimatedSprite2D" parent="." unique_id=386843733]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_txgwi")
-animation = &"fechada"
+animation = &"aberta"
 
 [node name="CartaContent" type="RichTextLabel" parent="." unique_id=891501719]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -112,6 +112,8 @@ grow_vertical = 2
 rotation = -0.13419579
 pivot_offset_ratio = Vector2(0.5, 0.5)
 theme = ExtResource("4_3p8e2")
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
 text = "Alou,
 
 	Top textos de teste já feitos.
@@ -151,6 +153,16 @@ grab_box = NodePath("../Grab_box")
 metadata/_custom_type_script = "uid://1ji2mi1pgus8"
 
 [node name="CarimboPapel" type="AnimatedSprite2D" parent="." unique_id=1060096137]
+visible = false
 scale = Vector2(0.08, 0.08)
 sprite_frames = SubResource("SpriteFrames_pj1rj")
 animation = &"null"
+
+[node name="Pop" type="Node" parent="." unique_id=149663214 node_paths=PackedStringArray("collision", "object")]
+script = ExtResource("11_j6sjy")
+collision = NodePath("../Grab_box")
+object = NodePath("..")
+metadata/_custom_type_script = "uid://dwy6kuwetxdw3"
+
+[connection signal="largou_item" from="Grab" to="." method="_on_grab_largou_item"]
+[connection signal="pegou_item" from="Grab" to="." method="_on_grab_pegou_item"]

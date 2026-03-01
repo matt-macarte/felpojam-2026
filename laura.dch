@@ -33,7 +33,7 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 },
 "happy": {
 "export_overrides": {
@@ -42,7 +42,7 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 },
 "super_happy": {
 "export_overrides": {
@@ -51,7 +51,7 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 },
 "sweating": {
 "export_overrides": {
@@ -60,7 +60,7 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 },
 "thinking": {
 "export_overrides": {
@@ -69,8 +69,8 @@
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
-"scene": ""
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
 },
-&"scale": 1.0
+&"scale": 0.5
 }

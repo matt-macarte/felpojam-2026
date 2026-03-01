@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("cancel"):
+	if event.is_action_pressed("switch") and segurando == true:
 		segurando = false
 		print("parou")
 	pass

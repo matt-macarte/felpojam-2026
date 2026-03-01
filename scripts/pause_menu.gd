@@ -15,12 +15,15 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("cancel") and !get_tree().paused:
+		print(visible)
 		pause()
-	if event.is_action_pressed("cancel") and get_tree().paused:
+	elif event.is_action_pressed("cancel") and get_tree().paused:
+		print("alo")
 		resume()
 
 func pause() -> void:
 	get_tree().paused = true
+	show()
 
 func resume() -> void:
 	get_tree().paused = false
