@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://s0d1xdw70oa5"]
 
 [ext_resource type="Script" uid="uid://dr5l2fttg4t6y" path="res://scripts/coisinha.gd" id="1_15etr"]
-[ext_resource type="Texture2D" uid="uid://bc6ruoa88riiy" path="res://assets/portraits/Coisinha/Coisinha_neutral.png" id="2_t2xso"]
+[ext_resource type="Texture2D" uid="uid://mpuc5gr14lbd" path="res://assets/sprites/portraits/coisinha_03.png" id="2_t2xso"]
 [ext_resource type="Texture2D" uid="uid://ocppob6ugn25" path="res://assets/sprites/portraits/coisinha_04.png" id="3_xn6a1"]
 [ext_resource type="Texture2D" uid="uid://dp48skowjshwa" path="res://assets/sprites/portraits/coisinha_01.png" id="4_syt4a"]
 [ext_resource type="Texture2D" uid="uid://b7mnhiqa7v73f" path="res://assets/sprites/portraits/coisinha_02.png" id="5_dlrv4"]
+[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/pop_on_mouse.gd" id="6_t2xso"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_whhnq"]
 animations = [{
@@ -46,17 +47,23 @@ radius = 162.0
 height = 440.0
 
 [node name="Coisinha" type="Node2D" unique_id=1331305234]
-
-[node name="Coisinha" type="Area2D" parent="." unique_id=1848756494]
-scale = Vector2(0.5651287, 0.5651287)
 script = ExtResource("1_15etr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Coisinha" unique_id=185446925]
-scale = Vector2(0.3, 0.3)
+[node name="CoisinhaMoods" type="AnimatedSprite2D" parent="." unique_id=185446925]
+unique_name_in_owner = true
+scale = Vector2(0.16953862, 0.16953862)
 sprite_frames = SubResource("SpriteFrames_whhnq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coisinha" unique_id=77541438]
+[node name="InteractBox" type="Area2D" parent="." unique_id=1848756494]
+scale = Vector2(0.5651287, 0.5651287)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractBox" unique_id=77541438]
 shape = SubResource("CapsuleShape2D_gkdbb")
 
-[connection signal="mouse_entered" from="Coisinha" to="Coisinha" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Coisinha" to="Coisinha" method="_on_mouse_exited"]
+[node name="Pop" type="Node" parent="." unique_id=2096783097 node_paths=PackedStringArray("collision", "object")]
+script = ExtResource("6_t2xso")
+collision = NodePath("../InteractBox")
+object = NodePath("../CoisinhaMoods")
+
+[connection signal="mouse_entered" from="InteractBox" to="." method="_on_interact_box_mouse_entered"]
+[connection signal="mouse_exited" from="InteractBox" to="." method="_on_interact_box_mouse_exited"]

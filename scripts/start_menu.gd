@@ -11,8 +11,6 @@ extends Control
 
 @onready var back_light_animation: AnimationPlayer = %AnimationPlayer
 
-signal start
-
 # luz pulsando de fundo
 @export var pulse :bool = true
 

@@ -8,7 +8,6 @@ var start = preload("uid://cgcgktwmn5n18").instantiate()
 
 
 func _ready() -> void:
-	start.connect("start", _on_game_start)
 	add_child(music)
 	music.autoplay = true
 	music.bus = "Music"

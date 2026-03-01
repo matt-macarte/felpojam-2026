@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cuj26p50bwb8c" path="res://assets/sprites/cartas/carta_branca_lisa_3.png" id="3_cc48w"]
 [ext_resource type="Theme" uid="uid://bsmqxaw2jc0um" path="res://assets/resources/letter_theme.tres" id="4_3p8e2"]
 [ext_resource type="Script" uid="uid://1ji2mi1pgus8" path="res://scripts/classes/grab.gd" id="6_txgwi"]
+[ext_resource type="Texture2D" uid="uid://dncn6ufxsxura" path="res://assets/sprites/carimbos/carimbo_papel_aversao.png" id="7_n4ou1"]
+[ext_resource type="Texture2D" uid="uid://ebsx43ch02fv" path="res://assets/sprites/carimbos/carimbo_papel_desalento.png" id="8_j6sjy"]
+[ext_resource type="Texture2D" uid="uid://dpx6olj7euefx" path="res://assets/sprites/carimbos/carimbo_papel_desejo.png" id="9_t2c6e"]
+[ext_resource type="Texture2D" uid="uid://buvvf2068lgwg" path="res://assets/sprites/carimbos/carimbo_papel_esperanca.png" id="10_tmw1o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_txgwi"]
 animations = [{
@@ -22,7 +26,7 @@ animations = [{
 "texture": ExtResource("2_3p8e2")
 }],
 "loop": true,
-"name": &"default",
+"name": &"fechada",
 "speed": 5.0
 }, {
 "frames": [{
@@ -35,19 +39,64 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3p8e2"]
-size = Vector2(1301.6053, 606.1814)
+size = Vector2(1341.6423, 590.08386)
 
-[node name="Carta" type="Node2D" unique_id=1141059468 node_paths=PackedStringArray("sprite", "conteudo")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4ou1"]
+size = Vector2(1780.7983, 1200.6844)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pj1rj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n4ou1")
+}],
+"loop": true,
+"name": &"aversao",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_j6sjy")
+}],
+"loop": true,
+"name": &"desalento",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_t2c6e")
+}],
+"loop": true,
+"name": &"desejo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_tmw1o")
+}],
+"loop": true,
+"name": &"esperanca",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"null",
+"speed": 5.0
+}]
+
+[node name="Carta" type="Node2D" unique_id=1141059468 node_paths=PackedStringArray("conteudo", "sprite_carta", "carimbo_marca")]
 script = ExtResource("1_cc48w")
-sprite = NodePath("AnimatedSprite2D")
 conteudo = NodePath("CartaContent")
+sprite_carta = NodePath("SpriteCarta")
+carimbo_marca = NodePath("CarimboPapel")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=386843733]
+[node name="SpriteCarta" type="AnimatedSprite2D" parent="." unique_id=386843733]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_txgwi")
-animation = &"aberta"
+animation = &"fechada"
 
 [node name="CartaContent" type="RichTextLabel" parent="." unique_id=891501719]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -76,17 +125,31 @@ se precidar"
 
 [node name="Grab_box" type="Area2D" parent="." unique_id=437141604]
 unique_name_in_owner = true
-position = Vector2(5.000004, 30.000002)
-rotation = -0.41808075
+position = Vector2(11, 5)
+rotation = -0.18196172
 scale = Vector2(0.29838198, 0.4000211)
 
 [node name="carta_fechada_box" type="CollisionShape2D" parent="Grab_box" unique_id=769798803]
-position = Vector2(-3.0627594, -1.0149536)
-scale = Vector2(1.0000001, 1)
+unique_name_in_owner = true
+position = Vector2(-27.871393, 50.824127)
+rotation = -0.1764195
+scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_3p8e2")
+
+[node name="carta_aberta_box" type="CollisionShape2D" parent="Grab_box" unique_id=1415538675]
+unique_name_in_owner = true
+position = Vector2(-19.86513, 2.6565495)
+rotation = 0.07396122
+scale = Vector2(0.7824599, 0.9725101)
+shape = SubResource("RectangleShape2D_n4ou1")
 
 [node name="Grab" type="Node" parent="." unique_id=1907598920 node_paths=PackedStringArray("node2d", "grab_box")]
 script = ExtResource("6_txgwi")
 node2d = NodePath("..")
 grab_box = NodePath("../Grab_box")
 metadata/_custom_type_script = "uid://1ji2mi1pgus8"
+
+[node name="CarimboPapel" type="AnimatedSprite2D" parent="." unique_id=1060096137]
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_pj1rj")
+animation = &"null"

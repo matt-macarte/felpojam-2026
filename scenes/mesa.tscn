@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://c4aafp744uhnm"]
 
-[ext_resource type="Script" uid="uid://oieabrd71hal" path="res://scripts/zoom_mesa.gd" id="1_tosoa"]
+[ext_resource type="Script" uid="uid://oieabrd71hal" path="res://scripts/mesa.gd" id="1_tosoa"]
 [ext_resource type="Texture2D" uid="uid://dp7e8xv7vpcev" path="res://assets/sprites/back_mesa_carta.png" id="2_d1pff"]
-[ext_resource type="PackedScene" uid="uid://43v36aqwair4" path="res://scenes/carimbo.tscn" id="3_8ehb7"]
-[ext_resource type="PackedScene" uid="uid://05djjj5spt7g" path="res://scenes/carimbo_cera.tscn" id="4_bru42"]
+[ext_resource type="Texture2D" uid="uid://b51ymc0n4i3uk" path="res://assets/sprites/carimbos/carimbos_suporte.png" id="3_8ehb7"]
 
 [sub_resource type="Animation" id="Animation_psngt"]
 length = 0.001
@@ -34,19 +33,13 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_d1pff")
 centered = false
 
+[node name="CarimbosSuporte" type="Sprite2D" parent="." unique_id=264971613]
+position = Vector2(1007, -67)
+scale = Vector2(1.27, 1.27)
+texture = ExtResource("3_8ehb7")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1891557525]
 libraries/ = SubResource("AnimationLibrary_8d5tt")
 autoplay = &"entrar"
-
-[node name="Carimbo" parent="." unique_id=566623697 instance=ExtResource("3_8ehb7")]
-
-[node name="Carimbo2" parent="." unique_id=1321065416 instance=ExtResource("3_8ehb7")]
-position = Vector2(710, 4)
-
-[node name="Carimbo3" parent="." unique_id=1245727181 instance=ExtResource("3_8ehb7")]
-position = Vector2(1038, 159)
-
-[node name="CarimboCera" parent="." unique_id=410488399 instance=ExtResource("4_bru42")]
-position = Vector2(383, 351)
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

@@ -6,23 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://80l0i3bcrsre" path="res://assets/sprites/cera_vermelha.png" id="3_qd43g"]
 [ext_resource type="Texture2D" uid="uid://b8twglgncuofj" path="res://assets/sprites/esquenta_cera_01.png" id="4_57ouo"]
 [ext_resource type="Texture2D" uid="uid://by2ppq1jg3gwn" path="res://assets/sprites/colher_vazia.png" id="5_r73rw"]
+[ext_resource type="Texture2D" uid="uid://cuyo2gvsqiku5" path="res://assets/sprites/carimbos/carimbo_aversao.png" id="7_5qfdx"]
+[ext_resource type="Texture2D" uid="uid://bldg31hpxnnup" path="res://assets/sprites/carimbos/carimbo_desalento.png" id="8_dlqvq"]
 [ext_resource type="PackedScene" uid="uid://s0d1xdw70oa5" path="res://scenes/coisinha.tscn" id="9_7hon6"]
+[ext_resource type="Texture2D" uid="uid://cqv6em3fow1lc" path="res://assets/sprites/carimbos/carimbo_desejo.png" id="9_16u7a"]
 [ext_resource type="Theme" uid="uid://bsmqxaw2jc0um" path="res://assets/resources/letter_theme.tres" id="10_6m82b"]
-[ext_resource type="PackedScene" uid="uid://c4aafp744uhnm" path="res://scenes/mesa.tscn" id="11_6m82b"]
+[ext_resource type="Texture2D" uid="uid://g0qcd8dvxyr2" path="res://assets/sprites/carimbos/carimbo_esperanca.png" id="10_kj8jf"]
 [ext_resource type="FontFile" uid="uid://cesj8ygegx2d3" path="res://assets/fonts/Lakki-Reddy/lakkireddy/LakkiReddy-Regular.ttf" id="11_ywesc"]
-[ext_resource type="PackedScene" uid="uid://c737ql4in1ow7" path="res://scenes/pause_menu.tscn" id="13_5qfdx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r73rw"]
-size = Vector2(138.97174, 220.0946)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywesc"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.15686275, 0.98039216, 0.85490197, 1)
-border_blend = true
 
 [sub_resource type="FontVariation" id="FontVariation_5qfdx"]
 base_font = ExtResource("11_ywesc")
@@ -32,17 +22,6 @@ spacing_bottom = -12
 script = ExtResource("1_c0umb")
 metadata/_edit_vertical_guides_ = [1280.0]
 metadata/_edit_horizontal_guides_ = [720.0]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1179491601]
-anchor_mode = 0
-
-[node name="Pause_menu" parent="." unique_id=1248953011 instance=ExtResource("13_5qfdx")]
-unique_name_in_owner = true
-visible = false
-
-[node name="ZoomMesa" parent="." unique_id=1970445107 instance=ExtResource("11_6m82b")]
-unique_name_in_owner = true
-visible = false
 
 [node name="Img" type="Node2D" parent="." unique_id=292818889]
 
@@ -72,54 +51,25 @@ position = Vector2(277, 586)
 scale = Vector2(0.2766731, 0.2766731)
 texture = ExtResource("5_r73rw")
 
-[node name="BruxaMes" type="Area2D" parent="." unique_id=741166761]
-visible = false
-position = Vector2(606, 139)
-scale = Vector2(0.9605263, 0.9056604)
+[node name="CarimboAversao" type="Sprite2D" parent="Img" unique_id=269958201]
+position = Vector2(453.2, 415.2)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("7_5qfdx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BruxaMes" unique_id=1422033715]
-position = Vector2(1.9073486e-06, 0)
-scale = Vector2(1.1777778, 0.48051947)
-shape = SubResource("RectangleShape2D_r73rw")
+[node name="CarimboDesalento" type="Sprite2D" parent="Img" unique_id=1942910297]
+position = Vector2(535.44, 415.2)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("8_dlqvq")
 
-[node name="Panel" type="Panel" parent="BruxaMes" unique_id=2145527199]
-offset_left = -85.36987
-offset_top = -56.312485
-offset_right = 84.328735
-offset_bottom = 62.9375
-theme_override_styles/panel = SubResource("StyleBoxFlat_ywesc")
+[node name="CarimboDesejo" type="Sprite2D" parent="Img" unique_id=1921555893]
+position = Vector2(616.44, 415.2)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("9_16u7a")
 
-[node name="Cartazes" type="Area2D" parent="." unique_id=584667144]
-visible = false
-position = Vector2(405, 150)
-scale = Vector2(0.9605263, 1.6433961)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cartazes" unique_id=707253958]
-position = Vector2(1.9073486e-06, 0)
-scale = Vector2(1.1777778, 0.48051947)
-shape = SubResource("RectangleShape2D_r73rw")
-
-[node name="Panel" type="Panel" parent="Cartazes" unique_id=2049487859]
-offset_left = -83.28769
-offset_top = -57.80712
-offset_right = 86.41092
-offset_bottom = 61.442863
-theme_override_styles/panel = SubResource("StyleBoxFlat_ywesc")
-
-[node name="Janelas" type="Area2D" parent="." unique_id=141163869]
-visible = false
-position = Vector2(90, 176)
-scale = Vector2(1.2793219, 3.3531578)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Janelas" unique_id=298788065]
-position = Vector2(1.9073486e-06, 0)
-scale = Vector2(1.1777778, 0.48051947)
-shape = SubResource("RectangleShape2D_r73rw")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Janelas" unique_id=268423770]
-position = Vector2(859.83044, -0.2982254)
-scale = Vector2(1.1777778, 0.48051947)
-shape = SubResource("RectangleShape2D_r73rw")
+[node name="CarimboEsperanca" type="Sprite2D" parent="Img" unique_id=1197695539]
+position = Vector2(693, 415.2)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("10_kj8jf")
 
 [node name="Coisinha" parent="." unique_id=1331305234 instance=ExtResource("9_7hon6")]
 position = Vector2(1068, 327)
@@ -137,8 +87,3 @@ theme_override_font_sizes/font_size = 28
 text = "controles:
 Tab
 Botões do mouse"
-
-[connection signal="mouse_entered" from="BruxaMes" to="." method="_on_bruxa_mes_mouse_entered"]
-[connection signal="mouse_exited" from="BruxaMes" to="." method="_on_bruxa_mes_mouse_exited"]
-[connection signal="mouse_entered" from="Cartazes" to="." method="_on_cartazes_mouse_entered"]
-[connection signal="mouse_exited" from="Cartazes" to="." method="_on_cartazes_mouse_exited"]

@@ -1,7 +1,47 @@
 [gd_scene format=3 uid="uid://43v36aqwair4"]
 
+[ext_resource type="Script" uid="uid://djumsvv3oc00h" path="res://scripts/carimbo.gd" id="1_7k5kb"]
 [ext_resource type="Texture2D" uid="uid://cuyo2gvsqiku5" path="res://assets/sprites/carimbos/carimbo_aversao.png" id="1_516qg"]
 [ext_resource type="Script" uid="uid://1ji2mi1pgus8" path="res://scripts/classes/grab.gd" id="2_kxde8"]
+[ext_resource type="Texture2D" uid="uid://bldg31hpxnnup" path="res://assets/sprites/carimbos/carimbo_desalento.png" id="3_6y74a"]
+[ext_resource type="Texture2D" uid="uid://cqv6em3fow1lc" path="res://assets/sprites/carimbos/carimbo_desejo.png" id="4_n7xgr"]
+[ext_resource type="Texture2D" uid="uid://g0qcd8dvxyr2" path="res://assets/sprites/carimbos/carimbo_esperanca.png" id="5_7rlow"]
+[ext_resource type="Script" uid="uid://dwy6kuwetxdw3" path="res://scripts/pop_on_mouse.gd" id="7_n7xgr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efxv0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_516qg")
+}],
+"loop": true,
+"name": &"aversao",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6y74a")
+}],
+"loop": true,
+"name": &"desalento",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n7xgr")
+}],
+"loop": true,
+"name": &"desejo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7rlow")
+}],
+"loop": true,
+"name": &"esperanca",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxde8"]
 radius = 67.647026
@@ -13,11 +53,16 @@ size = Vector2(358.875, 136)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_516qg"]
 size = Vector2(373, 144)
 
-[node name="Carimbo" type="Node2D" unique_id=566623697]
+[node name="Carimbo" type="Node2D" unique_id=2086801114 node_paths=PackedStringArray("sprite", "carimbar_box")]
+script = ExtResource("1_7k5kb")
+sprite = NodePath("CarimboS")
+carimbar_box = NodePath("CarimbarBox")
+metadata/_custom_type_script = "uid://djumsvv3oc00h"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=509824159]
+[node name="CarimboS" type="AnimatedSprite2D" parent="." unique_id=1691708566]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_516qg")
+sprite_frames = SubResource("SpriteFrames_efxv0")
+animation = &"esperanca"
 
 [node name="GrabBox" type="Area2D" parent="." unique_id=776253889]
 
@@ -41,3 +86,9 @@ script = ExtResource("2_kxde8")
 node2d = NodePath("..")
 grab_box = NodePath("../GrabBox")
 metadata/_custom_type_script = "uid://1ji2mi1pgus8"
+
+[node name="Pop" type="Node" parent="." unique_id=1971026123 node_paths=PackedStringArray("collision", "object")]
+script = ExtResource("7_n7xgr")
+collision = NodePath("../GrabBox")
+object = NodePath("../CarimboS")
+metadata/_custom_type_script = "uid://dwy6kuwetxdw3"
